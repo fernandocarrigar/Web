@@ -17,6 +17,9 @@ switch ($page) {
     case 'Catalogos':
         include_once("Vistas/Usuarios/Admin/Catalogos.php");
         break;
+    case 'CreateSucursales':
+        include_once("Vistas/Usuarios/Admin/CreateSucursales.php");
+        break;
     default:
         include_once('Vistas/Usuarios/Admin/Edicion.php');
         break;
