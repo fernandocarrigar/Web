@@ -18,7 +18,7 @@ CONSTRAINT fk_Marcas_Archivos FOREIGN KEY (IdArchivo) REFERENCES Archivos(IdArch
 );
 
 Create Table Productos (
-IdProductos     int(10) NOT NULL IDENTITY PRIMARY KEY,
+IdProductos     int(10) NOT NULL AUTO_INCREMENT,
 Descripcion     varchar(250) NOT NULL,
 IdMarca         int(10) NOT NULL,
 IdArchivo       int(10) NOT NULL,
@@ -28,7 +28,7 @@ CONSTRAINT fk_Productos_Marcas FOREIGN KEY (IdMarca) REFERENCES Marcas(IdMarca)
 );
 
 Create Table Publicaciones (
-IdPublic    int(10) NOT NULL IDENTITY PRIMARY KEY,
+IdPublic    int(10) NOT NULL AUTO_INCREMENT,
 Seccion     varchar(100) NOT NULL,
 Principal   varchar(250) NOT NULL,
 Secundario  varchar(250),
