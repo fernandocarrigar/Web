@@ -15,19 +15,28 @@ PRIMARY KEY (IdArchivo)
 Create Table Marcas (
 IdMarca     int(10) NOT NULL AUTO_INCREMENT, 
 Nombre      varchar(250) NOT NULL,
-IdArchivo   int(10) NOT NULL,
-PRIMARY KEY (IdMarca),
-CONSTRAINT fk_Marcas_Archivos FOREIGN KEY (IdArchivo) REFERENCES Archivos(IdArchivo)
+Archivo     longblob NOT NULL,
+MimeType    varchar(50) NOT NULL,
+PRIMARY KEY (IdMarca)
 );
 
 Create Table Productos (
 IdProductos     int(10) NOT NULL AUTO_INCREMENT,
 Descripcion     varchar(250) NOT NULL,
+Archivo     longblob NOT NULL,
+MimeType    varchar(50) NOT NULL,
 IdMarca         int(10) NOT NULL,
-IdArchivo       int(10) NOT NULL,
 PRIMARY KEY (IdProductos),
-CONSTRAINT fk_Productos_Archivos FOREIGN KEY (IdArchivo) REFERENCES Archivos(IdArchivo),
 CONSTRAINT fk_Productos_Marcas FOREIGN KEY (IdMarca) REFERENCES Marcas(IdMarca)
+);
+
+Create Table Sucursales(
+    IdSucursal  int(10) NOT NULL AUTO_INCREMENT,
+    Longitud    double NOT NULL,
+    Latitud     double NOT NULL,
+    Sucursal    varchar(100),
+    Direccion   varchar(450),
+    PRIMARY KEY (IdSucursal)
 );
 
 Create Table Publicaciones (

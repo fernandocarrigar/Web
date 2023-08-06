@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="Recursos/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="Recursos/css/maps.css" asp-append-version="true" />
-    <link rel="stylesheet" href="Recursos/css/aos-master.css" />
-    <link rel="stylesheet" href="Recursos/WebApplication1.styles.css" asp-append-version="true" />
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         /* Navbar styles */
         .nav-link {
@@ -40,7 +39,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom box-shadow mb-3">
             <div class="container-fluid bg-dark ps-auto pe-auto">
                 <a class="navbar-brand" href="index.php">
                     <img src="Img/MGC_Logo_EngraneB.png" alt="Logo"> <!-- Añade la ruta a tu logo aquí -->
@@ -63,7 +62,7 @@
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a class="nav-link text-light dropdown-item" href="index.php?page=Edicion&form=BGLOGO">
-                                            <span class="material-symbols.outlined">
+                                            <span class="">
                                                 <img src="~/img/icons/image_white_24dp.svg" />
                                                 Logo y Colores de la pagina
                                             </span>
@@ -125,7 +124,7 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="">
         <!-- <div class="row">
             <div class="col d-inline-block m-lg-3 m-md-3 m-sm-3">
                 <nav aria-label="breadcrumb" class=" bg-dark rounded-3 p-3" data-bs-theme="dark">

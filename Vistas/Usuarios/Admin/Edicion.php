@@ -42,7 +42,7 @@ if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
 </div>
 <!-- Navbar lateral end-->
 
-<div class="container shadow p-5 justify-content-center bg-dark-subtle">
+<div class="container p-5 justify-content-center bg-dark-subtle">
 
 <!-- Titulo de la vista -->
     <h1 class="text-center">Edicion de pagina</h1>
@@ -85,9 +85,8 @@ if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
                         </div>
                     </div>
                     <div class="container rounded-1 ms-auto me-auto bg-white">
-                        <div class="container m-4 d-block">
-                            <h3 class="text-center">Imagen del carrusel</h3>
-                            <div class="container justify-content-center">
+                            <h3 class="text-center">Logo</h3>
+                            <div class="justify-content-center">
                                 <div class="form form-group m-3 p-3">
                                     <input id="Archivo" name="Archivo" class="form-control form-control-lg" type="file" placeholder="Inserte una imagen de logo" onchange="myimg()" required />
                                 </div>
@@ -98,7 +97,6 @@ if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
                                     <img id="muestra" src="" alt="Aqui se muestra la imagen seleccionada" style="max-width:300px;max-height:200px;" />
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
                 <div class="container mt-4 ms-auto me-auto">
@@ -107,16 +105,12 @@ if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
                 <?php
                 }else if($form == 'ImagenesCarrusel'){
                 ?>
-                    <div class="container-sm d-inline-flex rounded-1 ms-auto me-auto bg-white">
-                        <div class="container-sm m-1 d-block">
-                            <h3 class="text-center">Imagen del carrusel</h3>
-                            <div class="container justify-content-center">
-                                <div class="form form-group m-3 p-3">
-                                    <input id="Archivo" name="Archivo" class="form-control form-control-lg" type="file" placeholder="Inserte una imagen de logo" onchange="myimg()" required />
-                                </div>
-                                <input id="Seccion" name="Seccion" value="ImagenesCarrusel" hidden />
-                            </div>
+                    <div class="container-sm justify-content-center rounded-1 ms-auto me-auto p-2 bg-white">
+                        <h3 class="text-center">Imagen del carrusel</h3>
+                        <div class="form form-group m-3 p-3">
+                            <input id="Archivo" name="Archivo" class="form-control form-control-lg" type="file" placeholder="Inserte una imagen de logo" onchange="myimg()" required />
                         </div>
+                        <input id="Seccion" name="Seccion" value="ImagenesCarrusel" hidden />
                     </div>
                     <div class="card border-0 justify-content-center m-5 rounded-1 ms-1 me-4 bg-white">
                         <div class=" img-thumbnail rounded me-auto mt-auto mb-auto">
