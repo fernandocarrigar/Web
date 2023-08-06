@@ -32,7 +32,7 @@
 
         /* Main content styles */
             .container {
-            margin-top: 20px;
+            /* margin-top: 20px; */
         }
     </style>
 </head>
@@ -53,68 +53,68 @@
                             <a class="nav-link text-white" href="index.php">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                                <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="material-symbols-outlined">
-                                        <img src="~/img/icons/design_services_white_24dp.svg" />
-                                        Edición de Página
-                                    </span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light dropdown-item" href="index.php?page=Edicion&form=BGLOGO">
-                                            <span class="">
-                                                <img src="~/img/icons/image_white_24dp.svg" />
-                                                Logo y Colores de la pagina
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light dropdown-item" href="index.php?page=Edicion&form=ImagenesCarrusel">
-                                            <span class="material-symbols-outlined">
-                                                <img src="~/img/icons/quiz_white_24dp.svg" />
-                                                Imagenes del Carrusel de fotos
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light dropdown-item" asp-controller="Sesion" asp-action="Publicaciones" asp-route-Seccion="Publicidad">
-                                            <span class="material-symbols.outlined">
-                                                <img src="~/img/icons/auto_awesome_mosaic_white_24dp.svg" />
-                                                Publicidad
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="material-symbols-outlined">
-                                        <img src="~/img/icons/map_white_24dp.svg" />
-                                        Edicion de Sucursales
-                                    </span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light dropdown-item" href="index.php?page=Sucursales">
-                                            <span class="material-symbols.outlined">
-                                                <img src="~/img/icons/image_white_24dp.svg" />
-                                                Sucursales
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light dropdown-item" href="index.php?page=CreateSucursales">
-                                            <span class="material-symbols-outlined">
-                                                <img src="~/img/icons/quiz_white_24dp.svg" />
-                                                Agregar Sucursales
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="material-symbols-outlined">
+                                    <img src="~/img/icons/design_services_white_24dp.svg" />
+                                    Edición de Página
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link text-light dropdown-item" href="index.php?page=Edicion&form=BGLOGO">
+                                        <span class="">
+                                            <img src="~/img/icons/image_white_24dp.svg" />
+                                            Logo y Colores de la pagina
+                                        </span>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light dropdown-item" href="index.php?page=Edicion&form=ImagenesCarrusel">
+                                        <span class="material-symbols-outlined">
+                                            <img src="~/img/icons/quiz_white_24dp.svg" />
+                                            Imagenes del Carrusel de fotos
+                                        </span>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light dropdown-item" asp-controller="Sesion" asp-action="Publicaciones" asp-route-Seccion="Publicidad">
+                                        <span class="material-symbols.outlined">
+                                            <img src="~/img/icons/auto_awesome_mosaic_white_24dp.svg" />
+                                            Publicidad
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="material-symbols-outlined">
+                                    <img src="~/img/icons/map_white_24dp.svg" />
+                                    Edicion de Sucursales
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link text-light dropdown-item" href="index.php?page=Sucursales">
+                                        <span class="material-symbols.outlined">
+                                            <img src="~/img/icons/image_white_24dp.svg" />
+                                            Sucursales
+                                        </span>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light dropdown-item" href="index.php?page=CreateSucursales">
+                                        <span class="material-symbols-outlined">
+                                            <img src="~/img/icons/quiz_white_24dp.svg" />
+                                            Agregar Sucursales
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="index.php?page=Publicaciones">Publicaciones</a>
                         </li>
