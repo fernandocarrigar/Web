@@ -6,7 +6,7 @@ class Conectar {
     private $host = "localhost";    //------    ESTA LINEA DEINE EL SERVIDOR  -------//
     private $user = "root";         //------    ESTA LINEA DEINE EL USUARIO  -------//
     private $pass = "";             //------    ESTA LINEA DEINE LA CONTRASEÑA  -------//
-    private $dbname   = "kardex";   //------    ESTA LINEA DEINE LA BASE DATOS  -------//
+    private $dbname   = "web";   //------    ESTA LINEA DEINE LA BASE DATOS  -------//
 
     public function conexionBD() {
 

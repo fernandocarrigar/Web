@@ -1,15 +1,19 @@
 <?php
-if ((!empty($_GET['page']))  ||  (isset($_GET['page']))) {
+
+include_once("Modelos/model_archivos.php");
+
+
+if((!empty($_GET['page']))  ||  (isset($_GET['page']))) {
     $page = $_GET['page'];
-} else {
+}else{
     $page = "";
 }
 
 require_once("Vistas/Template/nav-bar/nav-bar.php");
 
 switch ($page) {
-    case 'Home':
-        include_once('Vistas/Usuarios/Admin/Home.php');
+    case 'Publicaciones':
+        include_once("Vistas/Usuarios/Admin/Publicaciones.php");
         break;
     case 'Edicion':
         include_once('Vistas/Usuarios/Admin/Edicion.php');
@@ -24,8 +28,11 @@ switch ($page) {
         include_once("Vistas/Usuarios/Admin/CreateSucursales.php");
         break;
     default:
-        include_once('Vistas/Usuarios/Admin/Home.php');
+        include_once('Vistas/Home/Home.php');
         break;
+
 }
 
 require_once("Vistas/Template/footer/footer.php");
+
+?>

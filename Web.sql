@@ -1,9 +1,12 @@
+SET GLOBAL  max_allowed_packet=100*1024*1024;
+
 Create Database Web;
+
 use Web;
 
 Create Table Archivos (
 IdArchivo   int(10) NOT NULL AUTO_INCREMENT,
-Archivo     mediumblob NOT NULL,
+Archivo     longblob NOT NULL,
 MimeType    varchar(50) NOT NULL,
 Descripcion varchar(100),
 PRIMARY KEY (IdArchivo)
