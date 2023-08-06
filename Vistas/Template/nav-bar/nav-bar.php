@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="Recursos/WebApplication1.styles.css" asp-append-version="true" />
 
     <style>
-        /* Navbar styles
+        /* Navbar styles */
         .nav-link {
             transition: color 0.3s ease, background-color 0.3s ease;
         }
@@ -28,19 +28,19 @@
         .navbar-brand img {
             height: 120px;
             /* Ajusta el tamaño según tu logo */
-            /* margin-right: 10px;
-        } */
+            margin-right: 10px;
+        }
 
         /* Main content styles */
-        /* .container {
+            .container {
             margin-top: 20px;
-        } */ */
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light border-bottom box-shadow mb-3">
             <div class="container-fluid bg-dark ps-auto pe-auto">
                 <a class="navbar-brand" href="index.php">
                     <img src="Img/MGC_Logo_EngraneB.png" alt="Logo"> <!-- Añade la ruta a tu logo aquí -->
@@ -53,37 +53,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="index.php">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php?page=Edicion">Edición de Página</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php?page=Catalogos">Catálogos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php?page=Sucursales">Sucursales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php?page=CreateSucursales">Agregar Sucursales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php?page=Publicaciones">Publicaciones</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <div class="container">
-        <div class="row">
-            <div class="col d-inline-block m-lg-3 m-md-3 m-sm-3">
-                <nav aria-label="breadcrumb" class=" bg-dark rounded-3 p-3" data-bs-theme="dark">
-                    <ul class="nav d-flex dropdown-item">
-
-                        <?php if(1===1)
-                        {
-                            ?>
-                            <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
                                 <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="material-symbols-outlined">
                                         <img src="~/img/icons/design_services_white_24dp.svg" />
@@ -144,13 +114,24 @@
                                             </span>
                                         </a>
                                     </li>
-
+                                </ul>
                             </li>
-                        <?php
-                        }
-                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.php?page=Publicaciones">Publicaciones</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- <div class="row">
+            <div class="col d-inline-block m-lg-3 m-md-3 m-sm-3">
+                <nav aria-label="breadcrumb" class=" bg-dark rounded-3 p-3" data-bs-theme="dark">
+                    <ul class="nav d-flex dropdown-item">
                     </ul>
                 </nav>
             </div>
-        </div>
+        </div> -->
         <main role="main" class="p-0">
