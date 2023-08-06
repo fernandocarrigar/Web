@@ -1,4 +1,45 @@
 ﻿<!-- Navbar lateral start-->
+<style>
+    .offcanvas-body {
+        padding: 20px;
+    }
+
+    .dropdown-menu {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .dropdown-menu {
+        margin: 10px 0;
+        position: relative;
+        margin-bottom: 0;
+    }
+
+    .dropdown-menu .collapse {
+        border: none;
+        /* Asegura que no hay bordes en el elemento colapsable */
+    }
+
+    .list {
+        margin-bottom: 20px;
+        /* Ajusta según la cantidad de espacio que necesites */
+    }
+
+    .collapse {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .collapsing {
+        -webkit-transition: height 0.2s ease;
+        /* Cambia 0.2s a la duración que desees */
+        transition: height 0.2s ease;
+    }
+
+    .form-select {
+        width: 100%;
+    }
+</style>
 
 <div class="offcanvas offcanvas-start text-bg-white" id="demo">
     <div class="offcanvas-header">
@@ -7,21 +48,21 @@
     </div>
     <div class="offcanvas-body">
         <form>
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                    <a class="nav-link" href="" type="button" data-bs-toggle="collapse" data-bs-target="#marcas" aria-expanded="false" aria-controls="marcas">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 dropdown-menu">
+                <li class="nav-item list">
+                    <button class="nav-link btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#marcas" aria-expanded="false" aria-controls="marcas">
                         Marcas
-                    </a>
+                    </button>
                     <div class="collapse" id="marcas">
                         <select name="marca" class="form-select form-select-sm">
                             <option selected disabled hidden>Seleccione una marca</option>
                         </select>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="" type="button" data-bs-toggle="collapse" data-bs-target="#tipoproducto" aria-expanded="false" aria-controls="tipoproducto">
+                <li class="nav-item list">
+                    <button class="nav-link btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#tipoproducto" aria-expanded="false" aria-controls="tipoproducto">
                         Tipo de Producto
-                    </a>
+                    </button>
                     <div class="collapse" id="tipoproducto">
                         <select name="tipoproducto" class="form-select form-select-sm">
                             <option selected disabled hidden>Seleccione un tipo de producto</option>
