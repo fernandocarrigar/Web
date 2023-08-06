@@ -57,11 +57,11 @@ if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
     <?php 
     if((!empty($dtpubwhere)) && (isset($dtpubwhere))){
         ?>
-            <form method="post" action="index.php?page=Edicion&action=update" enctype="multipart/form-data">
+            <form method="post" action="index.php?page=Publicaciones&action=update" enctype="multipart/form-data">
         <?php
     }else{
         ?>
-            <form method="post" action="index.php?page=Edicion&action=insert" enctype="multipart/form-data" onsubmit="alert('Funciona')">
+            <form method="post" action="index.php?page=Publicaciones&action=insert" enctype="multipart/form-data" onsubmit="alert('Funciona')">
         <?php
     }
             if($form == 'BGLOGO'){
@@ -107,8 +107,16 @@ if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
                 ?>
                     <div class="container-sm justify-content-center rounded-1 ms-auto me-auto p-2 bg-white">
                         <h3 class="text-center">Imagen del carrusel</h3>
-                        <div class="form form-group m-3 p-3">
+                        <div class="form form-group m-3">
                             <input id="Archivo" name="Archivo" class="form-control form-control-lg" type="file" placeholder="Inserte una imagen de logo" onchange="myimg()" required />
+                        </div>
+                        <div class="form-floating m-3">
+                            <input id="Principal" name="Principal" class="form-control" type="text" placeholder="Titulo" />
+                            <label for="Principal">Titulo</label>
+                        </div>
+                        <div class="form-floating m-3">
+                            <textarea id="Secundario" name="Secundario" class="form-control" rows="4" placeholder="Descripcion"></textarea>
+                            <label for="Secundario">Descripcion</label>
                         </div>
                         <input id="Seccion" name="Seccion" value="ImagenesCarrusel" hidden />
                     </div>

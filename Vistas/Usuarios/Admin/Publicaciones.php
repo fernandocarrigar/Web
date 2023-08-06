@@ -17,7 +17,7 @@
                     <a class="nav-link" href="" type="button" data-bs-toggle="collapse" data-bs-target="#seccion" aria-expanded="false" aria-controls="seccion">
                         Seccion
                     </a>
-                    <div class="collapse" id="seccion">
+                    <div class="collapse mb-4" id="seccion">
                         <select name="Seccion" class="form-select form-select-sm">
                             <option selected disabled hidden>Seleccione una Seccion</option>
                             <option value="BGLOGO">Background & Logo</option>
