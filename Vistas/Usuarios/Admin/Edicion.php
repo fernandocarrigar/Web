@@ -13,7 +13,7 @@
             <li class="nav-item">
                 <a class="nav-link text-black" href="index.php?page=Edicion&form=ImagenesCarrusel">Imagenes del Carrusel de fotos</a>
             </li>
-<!--        <li class="nav-item dropdown">
+            <!--        <li class="nav-item dropdown">
                 <a class="nav-link text-black dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Dropdown
                 </a>
@@ -32,9 +32,9 @@
 </div>
 <!-- Navbar lateral end-->
 
-<div class="container shadow p-5 justify-content-center m-3 bg-dark-subtle">
+<div class="container shadow p-5 justify-content-center bg-dark-subtle">
 
-<!-- Titulo de la vista -->
+    <!-- Titulo de la vista -->
     <h1 class="text-center">Edicion de pagina</h1>
     <!-- Titulo de la vista -->
 
@@ -47,10 +47,10 @@
 
     <form asp-controller="Home" asp-action="Edicion" enctype="multipart/form-data">
 
-        <?php if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
+        <?php if ((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
             $form = $_GET['form'];
 
-            if($form == 'BGLOGO'){
+            if ($form == 'BGLOGO') {
                 echo '
                 <div class="container table-responsive d-inline-flex rounded ms-auto me-auto bg-white">
                     <div class=" justify-content-center m-4 ms-5 d-block">
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                 </div>';
-            }else if($form == 'ImagenesCarrusel'){
+            } else if ($form == 'ImagenesCarrusel') {
                 echo '
                     <div class="container-sm d-inline-flex rounded-1 ms-auto me-auto bg-white">
                         <div class="container-sm m-4 d-block">
@@ -118,4 +118,3 @@
         } ?>
     </form>
 </div>
-

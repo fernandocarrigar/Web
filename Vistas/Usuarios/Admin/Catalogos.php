@@ -34,7 +34,7 @@
 </div>
 <!-- Navbar lateral end-->
 
-<div class="container shadow p-5 justify-content-center m-3 bg-dark-subtle">
+<div class="container shadow p-5 justify-content-center bg-dark-subtle">
 
     <!-- Titulo de la vista -->
     <h1 class="text-center">Catalogos</h1>
@@ -46,7 +46,7 @@
     <!-- Boton del navbar lateral -->
 
 
-<!--     <div class="container table-responsive" style="max-height:500px;max-width:700px;">
+    <!--     <div class="container table-responsive" style="max-height:500px;max-width:700px;">
         <table class="overflow-auto">
             <tr class="sticky-sm-top z-0">
                 <td></td>
