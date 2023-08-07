@@ -1,9 +1,12 @@
+SET GLOBAL  max_allowed_packet=100*1024*1024;
+
 Create Database Web;
+
 use Web;
 
 Create Table Archivos (
 IdArchivo   int(10) NOT NULL AUTO_INCREMENT,
-Archivo     mediumblob NOT NULL,
+Archivo     longblob NOT NULL,
 MimeType    varchar(50) NOT NULL,
 Descripcion varchar(100),
 PRIMARY KEY (IdArchivo)
@@ -12,19 +15,28 @@ PRIMARY KEY (IdArchivo)
 Create Table Marcas (
 IdMarca     int(10) NOT NULL AUTO_INCREMENT, 
 Nombre      varchar(250) NOT NULL,
-IdArchivo   int(10) NOT NULL,
-PRIMARY KEY (IdMarca),
-CONSTRAINT fk_Marcas_Archivos FOREIGN KEY (IdArchivo) REFERENCES Archivos(IdArchivo)
+Archivo     longblob NOT NULL,
+MimeType    varchar(50) NOT NULL,
+PRIMARY KEY (IdMarca)
 );
 
 Create Table Productos (
 IdProductos     int(10) NOT NULL AUTO_INCREMENT,
 Descripcion     varchar(250) NOT NULL,
+Archivo     longblob NOT NULL,
+MimeType    varchar(50) NOT NULL,
 IdMarca         int(10) NOT NULL,
-IdArchivo       int(10) NOT NULL,
 PRIMARY KEY (IdProductos),
-CONSTRAINT fk_Productos_Archivos FOREIGN KEY (IdArchivo) REFERENCES Archivos(IdArchivo),
 CONSTRAINT fk_Productos_Marcas FOREIGN KEY (IdMarca) REFERENCES Marcas(IdMarca)
+);
+
+Create Table Sucursales(
+    IdSucursal  int(10) NOT NULL AUTO_INCREMENT,
+    Longitud    double NOT NULL,
+    Latitud     double NOT NULL,
+    Sucursal    varchar(100),
+    Direccion   varchar(450),
+    PRIMARY KEY (IdSucursal)
 );
 
 Create Table Publicaciones (
@@ -52,3 +64,19 @@ Create Table Usuarios(
     PRIMARY KEY (IdUsuario),
     CONSTRAINT fk_Usuarios_Roles FOREIGN KEY (IdRol) REFERENCES Roles(IdRol)
 );
+
+Create View view_publicaciones as
+SELECT p.IdPublic, p.Seccion, p.Principal, p.Secundario, p.IdArchivo, a.Archivo, a.MimeType, a.Descripcion
+FROM Publicaciones as p
+LEFT JOIN
+Archivos as a
+ON p.IdArchivo = a.IdArchivo
+ORDER by IdPublic DESC;
+
+Create View view_productos as
+SELECT p.IdProductos, p.Descripcion, p.Archivo as ProductoImg, p.MimeType as ProductoTp, p.IdMarca, m.Nombre, m.Archivo as MarcaImg, m.MimeType as MarcaTp
+FROM Productos as p
+LEFT JOIN
+Marcas as m
+ON p.IdMarca = m.IdMarca
+ORDER by IdProductos DESC;
