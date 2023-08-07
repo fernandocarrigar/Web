@@ -7,17 +7,15 @@
             <div class="col-lg-4">
                 <h3>Contacto</h3>
                 <address>
-                    Dirección de la Empresa<br>
-                    Ciudad, Código Postal<br>
-                    Teléfono: (123) 456-7890
+                    Av. Adolfo Ruiz C #236, Col Atasta<br>
+                    Villahermosa Tabasco, 86100<br>
+                    Teléfono: (993) 632 6838
                 </address>
             </div>
             <div class="col-lg-4">
                 <h3>Enlaces rápidos</h3>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Contacto</a></li>
+
                 </ul>
             </div>
             <div class="col-lg-4">

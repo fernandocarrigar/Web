@@ -28,7 +28,7 @@ footer h3,
 
 /* Colores y Tipografía */
 footer {
-    background-color: #333;
+    background-color: white;
     color: black;
     padding: 40px 0;
 }
@@ -59,25 +59,12 @@ li {
     list-style: none;
 }
 
-a[data-bs-toggle="modal"] {
-    color: #007BFF;
-    font-size: 0.9em;
-}
-
 .news-section a {
     color: #007BFF;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.modal-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-}
-
-.modal-body img,
 .hero-banner img,
 .intro img {
     max-width: 100%;
@@ -99,10 +86,6 @@ a[data-bs-toggle="modal"] {
 }
 
 /* ----- Estilos Específicos ----- */
-
-.hero-banner {
-    background-color: #007BFF;
-}
 
 .about-us h3 {
     color: #007BFF;
@@ -142,4 +125,10 @@ a[data-bs-toggle="modal"] {
 .faq-section,
 .news-section {
     margin-bottom: 40px;
+}
+
+.modal-content img {
+    margin: 20px;
+    max-width: calc(100% - 40px);
+    /* Restamos los 20px de margen en ambos lados */
 }
