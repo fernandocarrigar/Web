@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="Recursos/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="Recursos/css/maps.css" asp-append-version="true" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <style>
         /* Navbar styles */
         .nav-link {
@@ -29,17 +29,12 @@
             /* Ajusta el tamaño según tu logo */
             margin-right: 10px;
         }
-
-        /* Main content styles */
-            .container {
-            /* margin-top: 20px; */
-        }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom box-shadow mb-3 sticky-top">
             <div class="container-fluid bg-dark ps-auto pe-auto">
                 <a class="navbar-brand" href="index.php">
                     <img src="Img/MGC_Logo_EngraneB.png" alt="Logo"> <!-- Añade la ruta a tu logo aquí -->
@@ -66,7 +61,9 @@
                                         </span>
                                     </a>
                                 </li>
-                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark dropdown-item" href="index.php?page=Edicion&form=ImagenesCarrusel">
                                         <span class="material-symbols-outlined">
@@ -74,7 +71,9 @@
                                         </span>
                                     </a>
                                 </li>
-                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark dropdown-item" asp-controller="Sesion" asp-action="Publicaciones" asp-route-Seccion="Publicidad">
                                         <span class="material-symbols.outlined">
@@ -98,7 +97,9 @@
                                         </span>
                                     </a>
                                 </li>
-                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark dropdown-item" href="index.php?page=CreateSucursales">
                                         <span class="material-symbols-outlined">
@@ -112,7 +113,10 @@
                             <a class="nav-link text-white" href="index.php?page=Publicaciones">Publicaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php?page=Catalogos">Prodcutos</a>
+                            <a class="nav-link text-white" href="index.php?page=Nosotros">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.php?page=Catalogos">Productos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="index.php?page=Marcas">Marcas</a>

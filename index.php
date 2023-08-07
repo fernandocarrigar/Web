@@ -15,6 +15,9 @@ switch ($page) {
     case 'Marcas':
         include_once("Vistas/Usuarios/Admin/Marcas.php");
         break;
+    case 'Nosotros':
+        include_once("Vistas/Usuarios/Admin/Nosotros.php");
+        break;
     case 'Publicaciones':
         include_once("Vistas/Usuarios/Admin/Publicaciones.php");
         break;
@@ -37,5 +40,3 @@ switch ($page) {
 }
 
 require_once("Vistas/Template/footer/footer.php");
-
-?>

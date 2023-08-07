@@ -1,7 +1,7 @@
 </main>
 </div>
 
-<footer class="border-top footer text-muted">
+<footer class="border-top footer text-muted mt-5">
     <div class="container">
         &copy; 2023 - WebApplication1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </div>
