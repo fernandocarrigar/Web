@@ -18,6 +18,13 @@ body {
     color: #fff;
     display: flex;
     align-items: center;
+    padding: 50px 0;
+    /* Espacio superior e inferior para el encabezado */
+}
+
+.rounded-img {
+    border-radius: 15px;
+    /* Redondea los bordes de la imagen */
 }
 
 .hero h1 {
@@ -27,4 +34,11 @@ body {
 
 .products {
     margin: 50px 0;
+}
+
+.img-fluid {
+    max-width: 90%;
+    /* Ajusta como desees */
+    margin: 0 auto;
+    /* Centrar la imagen horizontalmente */
 }
