@@ -34,5 +34,3 @@ switch ($page) {
 }
 
 require_once("Vistas/Template/footer/footer.php");
-
-?>

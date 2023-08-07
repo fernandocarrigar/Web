@@ -1,6 +1,16 @@
+:root {
+  --font-base: 14px;
+  --font-link: 1rem;
+  --font-link-md: 1.2rem;
+  --font-link-lg: 1.4rem;
+  --navbar-brand-color: #007BFF;
+  --transition-color: color 0.3s ease, background-color 0.3s ease;
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 /* Base Styles */
 html {
-  font-size: 14px;
+  font-size: var(--font-base);
   position: relative;
   min-height: 100%;
 }
@@ -14,18 +24,6 @@ body {
   margin-bottom: 60px;
 }
 
-/* Media Queries */
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-
-  .navbar-brand img {
-    height: 120px;
-    /* Tamaño para pantallas medianas en adelante */
-  }
-}
-
 /* Components & Utilities */
 .input-color {
   padding: inherit;
@@ -35,14 +33,11 @@ body {
 
 .table-scroll {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
+}
 
-  &::-webkit-scrollbar {
-    display: none;
-    /* Chrome */
-  }
+.table-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 /* Page Specific Styles */
@@ -51,47 +46,22 @@ header {
 }
 
 .navbar {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
 }
 
 .navbar-brand {
   font-size: 1.5rem;
-  color: #007BFF !important;
+  color: var(--navbar-brand-color) !important;
 }
 
 .navbar-brand img {
   height: 60px;
-  /* Tamaño por defecto para móviles */
   margin-right: 10px;
 }
 
 .navbar-toggler {
   background-color: #C0C0C0;
-  /* Color de fondo del botón */
   border-color: #fff;
-  /* Cambiamos el color del borde del botón a blanco */
-}
-
-.navbar-nav .nav-link {
-  padding: 0.5rem 1rem;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-  text-decoration: none;
-  /* Por defecto, no estará subrayado */
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus {
-  color: #007BFF !important;
-  /* Cambio de color al pasar el cursor */
-  text-decoration: underline;
-  /* Subrayado al pasar el cursor */
-  background-color: transparent !important;
-  /* Aseguramos que el fondo no cambie */
-}
-
-/* Centrar el contenido del menú móvil */
-.navbar-collapse {
-  text-align: center;
 }
 
 .navbar-nav {
@@ -105,13 +75,28 @@ header {
 }
 
 .navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+  transition: var(--transition-color);
+  text-decoration: none;
+  font-size: var(--font-link);
   width: 100%;
+  text-align: center;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--navbar-brand-color) !important;
+  text-decoration: underline;
+  background-color: transparent !important;
+}
+
+.navbar-collapse {
   text-align: center;
 }
 
 .container:hover {
   background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   padding: 1rem;
   border-radius: 5px;
   transition: 0.25s;
@@ -119,4 +104,27 @@ header {
 
 main {
   margin-top: 2rem;
+}
+
+/* Media queries for responsive adjustments */
+@media (min-width: 576px) {
+  .navbar-nav .nav-link {
+    font-size: var(--font-link-md);
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  .navbar-brand img {
+    height: 120px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav .nav-link {
+    font-size: var(--font-link-lg);
+  }
 }

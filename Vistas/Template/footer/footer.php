@@ -1,11 +1,33 @@
 </main>
 </div>
 
-<footer class="border-top footer text-muted">
+<footer>
     <div class="container">
-        &copy; 2023 - WebApplication1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="row">
+            <div class="col-lg-4">
+                <h3>Contacto</h3>
+                <address>
+                    Dirección de la Empresa<br>
+                    Ciudad, Código Postal<br>
+                    Teléfono: (123) 456-7890
+                </address>
+            </div>
+            <div class="col-lg-4">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h3>Síguenos</h3>
+                <!-- Puedes añadir iconos de redes sociales aquí -->
+            </div>
+        </div>
     </div>
 </footer>
+
 <script src="Recursos/lib/jquery/dist/jquery.js"></script>
 <script src="Recursos/lib/jquery/dist/jquery.min.js"></script>
 <script src="Recursos/lib/jquery-validation/dist/jquery.validate.min.js"></script>

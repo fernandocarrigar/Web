@@ -12,37 +12,14 @@
     <link rel="stylesheet" href="Recursos/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="Recursos/css/maps.css" asp-append-version="true" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        /* Navbar styles */
-        .nav-link {
-            transition: color 0.3s ease, background-color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #007BFF;
-            background-color: #f5f5f5;
-        }
-
-        .navbar-brand img {
-            height: 120px;
-            /* Ajusta el tamaño según tu logo */
-            margin-right: 10px;
-        }
-
-        /* Main content styles */
-            .container {
-            /* margin-top: 20px; */
-        }
-    </style>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom box-shadow mb-3">
-            <div class="container-fluid bg-dark ps-auto pe-auto">
+            <div class="container-fluid bg-dark">
                 <a class="navbar-brand" href="index.php">
-                    <img src="Img/MGC_Logo_EngraneB.png" alt="Logo"> <!-- Añade la ruta a tu logo aquí -->
+                    <img src="Img/MGC_Logo_EngraneB.png" alt="Logo" class="navbar-logo"> <!-- Añade la clase 'navbar-logo' a tu CSS -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -52,69 +29,37 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="index.php">Home</a>
                         </li>
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="material-symbols-outlined">
-                                    <img src="~/img/icons/design_services_white_24dp.svg" />
-                                    Edición de Página
-                                </span>
+                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                <img src="~/img/icons/design_services_white_24dp.svg" /> Edición de Página
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link text-light dropdown-item" href="index.php?page=Edicion&form=BGLOGO">
-                                        <span class="">
-                                            <img src="~/img/icons/image_white_24dp.svg" />
-                                            Logo y Colores de la pagina
-                                        </span>
-                                    </a>
+                                <li><a class="dropdown-item" href="index.php?page=Edicion&form=BGLOGO"><img src="~/img/icons/image_white_24dp.svg" /> Logo y Colores de la pagina</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
                                 </li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light dropdown-item" href="index.php?page=Edicion&form=ImagenesCarrusel">
-                                        <span class="material-symbols-outlined">
-                                            <img src="~/img/icons/quiz_white_24dp.svg" />
-                                            Imagenes del Carrusel de fotos
-                                        </span>
-                                    </a>
+                                <li><a class="dropdown-item" href="index.php?page=Edicion&form=ImagenesCarrusel"><img src="~/img/icons/quiz_white_24dp.svg" /> Imagenes del Carrusel de fotos</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
                                 </li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light dropdown-item" asp-controller="Sesion" asp-action="Publicaciones" asp-route-Seccion="Publicidad">
-                                        <span class="material-symbols.outlined">
-                                            <img src="~/img/icons/auto_awesome_mosaic_white_24dp.svg" />
-                                            Publicidad
-                                        </span>
-                                    </a>
-                                </li>
+                                <li><a class="dropdown-item" asp-controller="Sesion" asp-action="Publicaciones" asp-route-Seccion="Publicidad"><img src="~/img/icons/auto_awesome_mosaic_white_24dp.svg" /> Publicidad</a></li>
                             </ul>
                         </li>
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="material-symbols-outlined">
-                                    <img src="~/img/icons/map_white_24dp.svg" />
-                                    Edicion de Sucursales
-                                </span>
+                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                <img src="~/img/icons/design_services_white_24dp.svg" /> Edicion de Sucursales
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link text-light dropdown-item" href="index.php?page=Sucursales">
-                                        <span class="material-symbols.outlined">
-                                            <img src="~/img/icons/image_white_24dp.svg" />
-                                            Sucursales
-                                        </span>
-                                    </a>
+                                <li><a class="dropdown-item" href="index.php?page=Sucursales"><img src="~/img/icons/image_white_24dp.svg" /> Sucursales</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
                                 </li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light dropdown-item" href="index.php?page=CreateSucursales">
-                                        <span class="material-symbols-outlined">
-                                            <img src="~/img/icons/quiz_white_24dp.svg" />
-                                            Agregar Sucursales
-                                        </span>
-                                    </a>
-                                </li>
+                                <li><a class="dropdown-item" href="index.php?page=CreateSucursales"><img src="~/img/icons/quiz_white_24dp.svg" /> Agregar Sucursales</a></li>
                             </ul>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-white" href="index.php?page=Publicaciones">Publicaciones</a>
                         </li>
@@ -124,13 +69,9 @@
         </nav>
     </header>
 
-    <div class="">
-        <!-- <div class="row">
-            <div class="col d-inline-block m-lg-3 m-md-3 m-sm-3">
-                <nav aria-label="breadcrumb" class=" bg-dark rounded-3 p-3" data-bs-theme="dark">
-                    <ul class="nav d-flex dropdown-item">
-                    </ul>
-                </nav>
-            </div>
-        </div> -->
-        <main role="main" class="p-0">
+    <main role="main" class="p-0">
+        <!-- Main content will go here -->
+    </main>
+</body>
+
+</html>
