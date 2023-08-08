@@ -185,7 +185,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="imageModal5" tabindex="-1" aria-labelledby="imageModalLabel6" aria-hidden="true">
+    <div class="modal fade" id="imageModal6" tabindex="-1" aria-labelledby="imageModalLabel6" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-body">
