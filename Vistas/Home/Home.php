@@ -1,7 +1,7 @@
 <?php
 
 require_once("Modelos/model_marcas.php");
-require_once("Modelos/model_catalogos.php");
+require_once("Modelos/model_productos.php");
 
 ?>
 
@@ -13,7 +13,7 @@ require_once("Modelos/model_catalogos.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipos de Protección Personal</title>
-    <link rel="stylesheet" href="/Recursos/Css/home.css">
+    <link rel="stylesheet" href="Recursos/Css/home.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@ require_once("Modelos/model_catalogos.php");
 
                 <!-- Columna para la imagen -->
                 <div class="col-lg-6">
-                    <img src="/Img/Distribuidores.PNG" alt="Imagen Descriptiva" class="img-fluid rounded-img">
+                    <img src="Img/Distribuidores.PNG" alt="Imagen Descriptiva" class="img-fluid rounded-img">
                 </div>
             </div>
         </div>
@@ -50,19 +50,6 @@ require_once("Modelos/model_catalogos.php");
                             <div class="col">
                                 <div class="card h-100">
                                     <img src="data:<?php echo $rows['MimeType'] ?>;base64,<?php echo (base64_encode($rows['Archivo'])) ?>" alt="" class="card-img-top" />
-                                    <div class="card-body overflow-auto shadow">
-                                        <h5 class="card-title"><?php echo $rows['Nombre'] ?></h5>
-                                        <div class="d-inline-flex">
-                                            <a href="index.php?page=Marcas&Id=<?php echo $rows['IdMarca'] ?>&form=<?php echo $Marca ?>" class="btn btn-success btn-sm">
-                                                Actualizar
-                                            </a>
-                                        </div>
-                                        <div class="d-inline-flex">
-                                            <a href="index.php?page=Marcas&Id=<?php echo $rows['IdMarca'] ?>&actionpub=delete&Seccion=<?php echo $Marca ?>" class="btn btn-danger btn-sm">
-                                                Eliminar
-                                            </a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         <?php
@@ -85,7 +72,7 @@ require_once("Modelos/model_catalogos.php");
                 ?>
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <?php
-                        foreach ($dtmarca as $rows) :
+                        foreach ($dtprod as $rows) :
                             if ($rows['IdMarca'] === $Marca) {
                         ?>
                                 <div class="col">
@@ -94,21 +81,31 @@ require_once("Modelos/model_catalogos.php");
                                         <div class="card-body overflow-auto shadow">
                                             <h5 class="card-title"><?php echo $rows['Principal'] ?></h5>
                                             <p class="card-text"><?php echo $rows['Secundario'] ?></p>
-                                            <div class="d-inline-flex">
-                                                <a href="index.php?page=Edicion&Id=<?php echo $rows['IdPublic'] ?>&form=<?php echo $Seccion ?>" class="btn btn-success btn-sm">
-                                                    Actualizar
-                                                </a>
-                                            </div>
-                                            <div class="d-inline-flex">
-                                                <a href="index.php?page=Publicaciones&Id=<?php echo $rows['IdPublic'] ?>&actionpub=delete&Seccion=<?php echo $Seccion ?>" class="btn btn-danger btn-sm">
-                                                    Eliminar
-                                                </a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                         <?php
                             }
+                        endforeach;
+                        ?>
+                    </div>
+                <?php
+                }else{
+                ?>
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <?php
+                        foreach ($dtprod as $rows) :
+                        ?>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="data:<?php echo $rows['ProductoTp'] ?>;base64,<?php echo(base64_encode($rows['ProductoImg'])) ?>" alt="" class="card-img-top" />
+                                        <div class="card-body overflow-auto shadow">
+                                            <h5 class="card-title"><?php echo $rows['Nombre']?></h5>
+                                            <p class="card-text"><?php echo $rows['Descripcion'] ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                        <?php
                         endforeach;
                         ?>
                     </div>

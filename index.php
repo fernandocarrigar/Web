@@ -12,6 +12,9 @@ if((!empty($_GET['page']))  ||  (isset($_GET['page']))) {
 require_once("Vistas/Template/nav-bar/nav-bar.php");
 
 switch ($page) {
+    case 'EdicionCatalogos':
+        include_once("Vistas/Usuarios/Admin/EdicionCatalogos.php");
+        break;
     case 'Marcas':
         include_once("Vistas/Usuarios/Admin/Marcas.php");
         break;
@@ -27,8 +30,8 @@ switch ($page) {
     case 'Sucursales';
         include_once("Vistas/Usuarios/Admin/Sucursales.php");
         break;
-    case 'Catalogos':
-        include_once("Vistas/Usuarios/Admin/Catalogos.php");
+    case 'Productos':
+        include_once("Vistas/Usuarios/Admin/Productos.php");
         break;
     case 'CreateSucursales':
         include_once("Vistas/Usuarios/Admin/CreateSucursales.php");

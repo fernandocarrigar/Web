@@ -1,6 +1,6 @@
 <?php
 
-class Marcas extends Conectar {
+class Productos extends Conectar {
     private $table;
     private $view;
     private $id;
@@ -55,6 +55,18 @@ class Marcas extends Conectar {
         return $this->field;
     }
 
+    public function getWhereMarca($value)  {
+        $this->val = $value;
+
+        $sql = "SELECT * FROM {$this->view} WHERE IdMarca='{$this->val}' ";
+        // echo $sql;
+        $result = $this->db->query($sql);
+        while($row = $result->fetch_assoc())   {
+            $this->field[] = $row;
+        }
+        return $this->field;
+    }
+
     public function getView() {
         $sql = "SELECT * FROM {$this->view}";
 
@@ -76,22 +88,23 @@ class Marcas extends Conectar {
         return $this->field;
     }
 
-    public function insertMarca($name,$file,$type) {
+    public function insertProducto($desc,$file,$type,$marca) {
         $this->col = implode(",",$this->column);
 
         // echo $this->col;
         // echo $this->val;
-        $sql = "INSERT INTO {$this->table} ({$this->pkey},{$this->col}) VALUE (NULL,'$name','$file','$type')";
+        $sql = "INSERT INTO {$this->table} ({$this->pkey},{$this->col}) VALUE (NULL,'$desc','$file','$type', '$marca')";
         // echo $sql;
         $this->db->query($sql);
     }
 
-    public function updateMarca($value,$name,$file,$type)  {
+    public function updateProducto($value,$desc,$file,$type,$marca)  {
         $this->id = $value;     //ATRAPA EL ID QUE SE USARA PARA IDENTIFICAR CUAL SE CAMBIARA
         // $this->col = implode(",",$this->columsn);
-        $this->values[] = $this->column[0] ."='". $name ."'";
+        $this->values[] = $this->column[0] ."='". $desc ."'";
         $this->values[] = $this->column[1] ."='". $file ."'";
         $this->values[] = $this->column[2] ."='". $type ."'";
+        $this->values[] = $this->column[3] ."='". $marca ."'";
         $this->val = implode(",",$this->values);
 
         $sql = "UPDATE {$this->table} SET {$this->val} WHERE {$this->pkey}='{$this->id}'";
@@ -99,7 +112,7 @@ class Marcas extends Conectar {
     }
 
 
-    public function deleteMarca($value)  {
+    public function deleteProducto($value)  {
         $this->id = $value;
         $sql = "DELETE FROM {$this->table} WHERE {$this->pkey}={$this->id}";
         $this->db->query($sql);

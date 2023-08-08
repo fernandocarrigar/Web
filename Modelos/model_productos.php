@@ -1,9 +1,9 @@
 <?php
 
-require_once("Recursos/config/db.php");
-require_once("Controladores/controller_marcas.php");
+require_once('Recursos/config/db.php');
+require_once('Controladores/controller_productos.php');
 
-class MarcasModel extends Marcas
+class ProductosModel extends Productos
 {
 
     private $conArc;
@@ -60,32 +60,41 @@ class MarcasModel extends Marcas
     }
 }
 
-$marca = new Marcas();
-$marca->setTable("marcas");
-$marca->setView('');
+$producto = new Productos ();
+$producto->setTable("productos");
+$producto->setView('view_productos');
 
-$marca->setKey('IdMarca');
+$producto->setKey('IdProductos');
 
-$marca->setColumns('Nombre');
-$marca->setColumns('Archivo');
-$marca->setColumns('MimeType');
+$producto->setColumns('Descripcion');
+$producto->setColumns('Archivo');
+$producto->setColumns('MimeType');
+$producto->setColumns('IdMarca');
 
-if ((!empty($_GET['Id'])) && (isset($_GET['Id']))) {
+// $fch_r = date('Y-m-d');     //OBTIENE LA FECHA ACTUAL
+
+if ((!empty($_GET['Id'])) && (isset($_GET['Id'])))  {
     $Id = $_GET['Id'];
-    $dtmarcawhere = $marca->getWhere($Id);
-} else {
+    $dtprodwhere = $producto->getWhere($Id);
+}else{
     $Id = null;
+    $dtprodwhere = null;
 }
-$dtmarca = $marca->getAll();
 
-$dir_doc = "Recursos/Archivos/";
+$dtprod = $producto->getView();
+
+if ((!empty($_POST['Marca'])) && (isset($_POST['Marca'])))  {
+    $Marca = $_POST['Marca'];
+    $dtmarcawhere = $producto->getWhereMarca($Marca);
+}else{
+    $dtmarcawhere = null;
+}
 
 // DEFINE LA ACCION A REALIZAR: INSERT, UPDATE Y DELETE
-if ((!empty($_GET['actionmarc'])) && (isset($_GET['actionmarc']))) {
-    $action = $_GET['actionmarc'];
-
-    if ($action === 'insert') {
-
+if((!empty($_GET['actionprod'])) && (isset($_GET['actionprod']))) {
+    $action = $_GET['actionprod'];
+    if($action === 'insert') {
+        // COMPROBAMOS QUE TODOS LOS ARCHIVOS HAYAN SIDO CORRECTOS
         //VERIFICA QUE $_FILES NO ESTE VACIO Y QUE SI CONTENGA ALGUN OBJETO
         if (!empty($_FILES['Archivo'])) {
 
@@ -94,7 +103,7 @@ if ((!empty($_GET['actionmarc'])) && (isset($_GET['actionmarc']))) {
             $archivosize = $_FILES['Archivo']['size'];
             $archivofile = $_FILES['Archivo']['tmp_name'];
 
-            $upload = new MarcasModel();
+            $upload = new ProductosModel();
             $arch = $upload->uploadFile($archivoname, $archivotype, $archivosize, $archivofile);
 
             // COMPROBAMOS QUE TODOS LOS ARCHIVOS HAYAN SIDO CORRECTOS
@@ -120,21 +129,21 @@ if ((!empty($_GET['actionmarc'])) && (isset($_GET['actionmarc']))) {
 
                 // INSERTAMOS LA MARCA EN LA BASE DE DATOS 
 
-                $namemarc = "". $_POST['Nombre'] ."";
+                $descrip = "". $_POST['Descripcion'] ."";
+                $idmar = "". $_POST['IdMarca'] ."";
 
-                $marca->insertMarca($namemarc, $dtfile, $filetype);
-                $idfile = $marca->lastId();
+                $producto->insertProducto($descrip, $dtfile, $filetype,$idmar);
 
                 // BORRA LOS ARCHIVOS QUE SE GUARDARON TEMPORALMENTE EN EL SERVIDOR
                 unlink($rtfile);
 
-                echo '<script>location.replace("index.php?page=Marcas&ins=Ok");</script>';
+                echo '<script>location.replace("index.php?page=Productos&ins=Ok");</script>';
             }
         } else {
             header('Location: index.php?pageEdicion&Id=' . $Id . '');
         }
-    }elseif ($action === 'update') {
-
+    }else if($action === 'update'){
+        
         //VERIFICA QUE $_FILES NO ESTE VACIO Y QUE SI CONTENGA ALGUN OBJETO
         if (!empty($_FILES['Archivo'])) {
 
@@ -143,7 +152,7 @@ if ((!empty($_GET['actionmarc'])) && (isset($_GET['actionmarc']))) {
             $archivosize = $_FILES['Archivo']['size'];
             $archivofile = $_FILES['Archivo']['tmp_name'];
 
-            $upload = new MarcasModel();
+            $upload = new ProductosModel();
             $arch = $upload->uploadFile($archivoname, $archivotype, $archivosize, $archivofile);
 
             // COMPROBAMOS QUE TODOS LOS ARCHIVOS HAYAN SIDO CORRECTOS
@@ -169,21 +178,25 @@ if ((!empty($_GET['actionmarc'])) && (isset($_GET['actionmarc']))) {
 
                 // INSERTAMOS LA MARCA EN LA BASE DE DATOS 
 
-                $namemarc = "". $_POST['Nombre'] ."";
+                $descrip = "". $_POST['Descripcion'] ."";
+                $idmar = "". $_POST['IdMarca'] ."";
 
-                $marca->updateMarca($Id,$namemarc, $dtfile, $filetype);
-                $idfile = $marca->lastId();
+                $producto->updateProducto($Id,$descrip, $dtfile, $filetype,$idmar);
 
                 // BORRA LOS ARCHIVOS QUE SE GUARDARON TEMPORALMENTE EN EL SERVIDOR
                 unlink($rtfile);
 
-                echo '<script>location.replace("index.php?page=Marcas&upd=Ok");</script>';
+                echo '<script>location.replace("index.php?page=Productos&upd=Ok");</script>';
             }
         } else {
             header('Location: index.php?pageEdicion&Id=' . $Id . '');
         }
-    }elseif ($action === 'delete') {
-        $marca->deleteMarca($Id);
-        echo '<script>location.replace("index.php?page=Marcas&del=Ok");</script>';
-    }
+
+    }else if($action === 'delete')   {
+        $producto->deleteProducto($Id);
+        echo '<script>location.replace("index.php?page=Productos&del=Ok");</script>';
+    } 
 }
+
+
+?>

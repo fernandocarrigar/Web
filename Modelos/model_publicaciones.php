@@ -54,6 +54,7 @@ if((!empty($_GET['actionpub'])) && (isset($_GET['actionpub']))) {
 
             $publicacion->insertPub();
 
+            echo '<script>location.replace("index.php?page=Publicaciones&ins=Ok");</script>';
         }
     }else if($action === 'update'){
         
@@ -97,6 +98,8 @@ if((!empty($_GET['actionpub'])) && (isset($_GET['actionpub']))) {
 
                 // BORRA LOS ARCHIVOS QUE SE GUARDARON TEMPORALMENTE EN EL SERVIDOR
                 unlink($rtfile);
+
+                echo '<script>location.replace("index.php?page=Publicaciones&upd=Ok");</script>';
             }
         }
 
@@ -113,6 +116,8 @@ if((!empty($_GET['actionpub'])) && (isset($_GET['actionpub']))) {
 
         $publicacion->deletePub($Id);
         $archivo->deleteArchivo($Idarchdel);
+
+        echo '<script>location.replace("index.php?page=Publicaciones&del=Ok");</script>';
 
     } 
 }

@@ -4,7 +4,7 @@
 
 ?>
 
-<div class="container shadow p-5 justify-content-center bg-dark-subtle">
+<div class="container shadow p-5 justify-content-center bg-dark-subtle" data-aos="zoom-in">
     <?php
         if($Id === ""){
     ?>

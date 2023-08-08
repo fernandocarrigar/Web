@@ -45,81 +45,82 @@
                 <div class="navbar-collapse collapse justify-content-center" id="navbarContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php">Home</a>
+                            <a class="nav-link text-white fs-6" href="index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fs-6" href="index.php?page=Nosotros">Nosotros</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="material-symbols-outlined">
-                                    Edición de Página
-                                </span>
+                            <a class="nav-link text-light dropdown-toggle fs-6" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Edición de la página
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark dropdown-item" href="index.php?page=Edicion&form=BGLOGO">
-                                        <span class="">
-                                            Logo y Colores de la pagina
-                                        </span>
+                                    <a class="nav-link text-dark dropdown-item fs-6" href="index.php?page=Publicaciones">
+                                        Publicaciones
                                     </a>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark dropdown-item" href="index.php?page=Edicion&form=ImagenesCarrusel">
-                                        <span class="material-symbols-outlined">
-                                            Imagenes del Carrusel de fotos
-                                        </span>
+                                    <a class="nav-link text-dark dropdown-item fs-6" href="index.php?page=Edicion&form=BGLOGO">
+                                            Editar Logo y Colores de la pagina
                                     </a>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark dropdown-item" asp-controller="Sesion" asp-action="Publicaciones" asp-route-Seccion="Publicidad">
-                                        <span class="material-symbols.outlined">
+                                    <a class="nav-link text-dark dropdown-item fs-6" href="index.php?page=Edicion&form=ImagenesCarrusel">
+                                            Editar Imagenes del Carrusel de fotos
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark dropdown-item fs-6" asp-controller="Sesion" asp-action="Publicaciones" asp-route-Seccion="Publicidad">
                                             Publicidad
-                                        </span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="material-symbols-outlined">
-                                    Edicion de Sucursales
-                                </span>
+                            <a class="nav-link text-light dropdown-toggle fs-6" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Sucursales
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark dropdown-item" href="index.php?page=Sucursales">
-                                        <span class="material-symbols.outlined">
-                                            Sucursales
-                                        </span>
+                                    <a class="nav-link text-dark dropdown-item fs-6" href="index.php?page=Sucursales">
+                                        Ver Sucursales
                                     </a>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark dropdown-item" href="index.php?page=CreateSucursales">
-                                        <span class="material-symbols-outlined">
+                                    <a class="nav-link text-dark dropdown-item fs-6" href="index.php?page=CreateSucursales">
                                             Agregar Sucursales
-                                        </span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php?page=Publicaciones">Publicaciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php?page=Nosotros">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php?page=Catalogos">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php?page=Marcas">Marcas</a>
+                        <li class="nav-item dropdown me-auto">
+                            <a class="nav-link text-light dropdown-toggle fs-6" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Catalogos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark fs-6" href="index.php?page=Productos">Productos</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="nav-item">
+                                     <a class="nav-link text-dark fs-6" href="index.php?page=Marcas">Marcas</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>

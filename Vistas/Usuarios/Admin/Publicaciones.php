@@ -1,6 +1,21 @@
 <?php
     require_once("Modelos/model_archivos.php");
     require_once("Modelos/model_publicaciones.php");
+
+    if(isset($_GET['ins'])){
+        if($_GET['ins'] == "Ok"){
+            echo '<script>alert("Se inserto correctamente");</script>';
+        }
+    }elseif(isset($_GET['upd'])){
+        if($_GET['upd'] == "Ok"){
+            echo '<script>alert("Se actualizo correctamente");</script>';
+        }
+    }elseif(isset($_GET['del'])){
+        if($_GET['del'] == "Ok"){
+            echo '<script>alert("Se elimino correctamente");</script>';
+        }
+    }
+
 ?>
 
 <!-- Navbar lateral start-->

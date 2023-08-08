@@ -2,11 +2,25 @@
 
     require_once("Modelos/model_marcas.php");
 
+    if(isset($_GET['ins'])){
+        if($_GET['ins'] == "Ok"){
+            echo '<script>alert("Se inserto correctamente");</script>';
+        }
+    }elseif(isset($_GET['upd'])){
+        if($_GET['upd'] == "Ok"){
+            echo '<script>alert("Se actualizo correctamente");</script>';
+        }
+    }elseif(isset($_GET['del'])){
+        if($_GET['del'] == "Ok"){
+            echo '<script>alert("Se elimino correctamente");</script>';
+        }
+    }
+
 ?>
 
 <!-- Navbar lateral start-->
 
-<div class="offcanvas offcanvas-start text-bg-white" id="demo">
+<!-- <div class="offcanvas offcanvas-start text-bg-white" id="demo">
     <div class="offcanvas-header">
         <h1 class="offcanvas-title">Filtros</h1>
         <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas"></button>
@@ -29,7 +43,7 @@
             </ul>
         </form>
     </div>
-</div>
+</div> -->
 
 <!-- Navbar lateral end-->
 
@@ -39,15 +53,16 @@
     <h1 class="text-center">Marcas</h1>
     <!-- Titulo de la vista -->
     <!-- Boton del navbar lateral -->
-    <button class="btn btn-primary btn-lg d-relative m-4" tabindex="-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+    <!-- <button class="btn btn-primary btn-lg d-relative m-4" tabindex="-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
         Filtrar productos
-    </button>
+    </button> -->
     <!-- Boton del navbar lateral -->
 
+    <a href="index.php?page=EdicionCatalogos&form=Marcas" class="btn btn-success btn-lg ms-5">
+        Agregar una nueva marca
+    </a>
+
     <div class="container mt-3 p-3 bg-white overflow-auto table-scroll rounded" style="max-height:600px;">
-    <?php
-        if(isset($Marca)){
-    ?>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <?php
                 foreach($dtmarca as $rows):
@@ -58,12 +73,12 @@
                     <div class="card-body overflow-auto shadow">
                         <h5 class="card-title"><?php echo $rows['Nombre']?></h5>
                         <div class="d-inline-flex">
-                            <a href="index.php?page=Marcas&Id=<?php echo $rows['IdMarca']?>&form=<?php echo $Marca?>" class="btn btn-success btn-sm">
+                            <a href="index.php?page=EdicionCatalogos&Id=<?php echo $rows['IdMarca']?>&form=Marcas" class="btn btn-success btn-sm">
                                 Actualizar
                             </a>
                         </div>
                         <div class="d-inline-flex">
-                            <a href="index.php?page=Marcas&Id=<?php echo $rows['IdMarca']?>&actionpub=delete&Seccion=<?php echo $Marca?>" class="btn btn-danger btn-sm">
+                            <a href="index.php?page=Marcas&Id=<?php echo $rows['IdMarca']?>&actionmarc=delete" class="btn btn-danger btn-sm">
                                 Eliminar
                             </a>
                         </div>
@@ -74,21 +89,5 @@
                 endforeach;
             ?>
         </div>
-    <?php
-        }else if(!isset($Marca)){
-    ?>
-        <div class="row justify-content-center">
-            <p>En esta seccion, se podran ver las diferentes publicaciones que existen en la pagina. <br />
-                De igual manera hay un boton en la parte superior que permite el 
-                <a class="underline" tabindex="-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">filtrado</a>
-                 de las publicaciones, 
-                de esta manera podra diferenciar sin importar cuantas tenga en el sitio web.
-            </p>
-        </div>
-    <?php
-        }
-    ?>
     </div>
-
-
 </div>
