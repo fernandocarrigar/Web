@@ -17,15 +17,17 @@
             <div class="logo-container">
                 <img src="/Img/MGC_Logo_EngraneB.png" alt="Logo" class="logo">
             </div>
-            <div class="input-group">
-                <span class="icon"><i class="fa fa-user"></i></span>
-                <input type="text" placeholder="Usuario">
-            </div>
-            <div class="input-group">
-                <span class="icon"><i class="fa fa-lock"></i></span>
-                <input type="password" placeholder="Contraseña">
-            </div>
-            <button>Entrar</button>
+            <form action="/loginProcess.php" method="post">
+                <div class="input-group">
+                    <span class="icon"><i class="fa fa-user"></i></span>
+                    <input type="text" name="username" placeholder="Usuario">
+                </div>
+                <div class="input-group">
+                    <span class="icon"><i class="fa fa-lock"></i></span>
+                    <input type="password" name="password" placeholder="Contraseña">
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
         </div>
     </div>
 </body>

@@ -2,10 +2,14 @@
 
 include_once("Modelos/model_archivos.php");
 
+require_once("Controladores/controller_login.php");
+session_start();
 
-if((!empty($_GET['page']))  ||  (isset($_GET['page']))) {
+$usuarioController = new UsuarioController();
+
+if ((!empty($_GET['page']))  ||  (isset($_GET['page']))) {
     $page = $_GET['page'];
-}else{
+} else {
     $page = "";
 }
 
@@ -39,7 +43,6 @@ switch ($page) {
     default:
         include_once('Vistas/Home/Home.php');
         break;
-
 }
 
 require_once("Vistas/Template/footer/footer.php");
