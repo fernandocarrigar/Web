@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-6">
                 <!-- Puedes añadir una imagen relacionada con tu negocio aquí -->
-                <img src="Img/Home.png" alt="Imagen Descriptiva" class="img-fluid rounded">
+                <img src="/Img/Home.png" alt="Imagen Descriptiva" class="img-fluid rounded">
             </div>
         </div>
         <hr>

@@ -90,6 +90,13 @@ if ((!empty($_POST['Marca'])) && (isset($_POST['Marca'])))  {
     $dtmarcawhere = null;
 }
 
+if ((!empty($_GET['Marca'])) && (isset($_GET['Marca']))) {
+    $Marca = $_GET['Marca'];
+    $dtmarcawhere = $producto->getWhereMarca($Marca);
+} else {
+    $dtmarcawhere = null;
+}
+
 // DEFINE LA ACCION A REALIZAR: INSERT, UPDATE Y DELETE
 if((!empty($_GET['actionprod'])) && (isset($_GET['actionprod']))) {
     $action = $_GET['actionprod'];
@@ -197,6 +204,3 @@ if((!empty($_GET['actionprod'])) && (isset($_GET['actionprod']))) {
         echo '<script>location.replace("index.php?page=Productos&del=Ok");</script>';
     } 
 }
-
-
-?>

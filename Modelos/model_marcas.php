@@ -120,7 +120,7 @@ if ((!empty($_GET['actionmarc'])) && (isset($_GET['actionmarc']))) {
 
                 // INSERTAMOS LA MARCA EN LA BASE DE DATOS 
 
-                $namemarc = "". $_POST['Nombre'] ."";
+                $namemarc = "" . $_POST['Nombre'] . "";
 
                 $marca->insertMarca($namemarc, $dtfile, $filetype);
                 $idfile = $marca->lastId();
@@ -133,7 +133,7 @@ if ((!empty($_GET['actionmarc'])) && (isset($_GET['actionmarc']))) {
         } else {
             header('Location: index.php?pageEdicion&Id=' . $Id . '');
         }
-    }elseif ($action === 'update') {
+    } elseif ($action === 'update') {
 
         //VERIFICA QUE $_FILES NO ESTE VACIO Y QUE SI CONTENGA ALGUN OBJETO
         if (!empty($_FILES['Archivo'])) {
@@ -169,9 +169,9 @@ if ((!empty($_GET['actionmarc'])) && (isset($_GET['actionmarc']))) {
 
                 // INSERTAMOS LA MARCA EN LA BASE DE DATOS 
 
-                $namemarc = "". $_POST['Nombre'] ."";
+                $namemarc = "" . $_POST['Nombre'] . "";
 
-                $marca->updateMarca($Id,$namemarc, $dtfile, $filetype);
+                $marca->updateMarca($Id, $namemarc, $dtfile, $filetype);
                 $idfile = $marca->lastId();
 
                 // BORRA LOS ARCHIVOS QUE SE GUARDARON TEMPORALMENTE EN EL SERVIDOR
@@ -182,7 +182,7 @@ if ((!empty($_GET['actionmarc'])) && (isset($_GET['actionmarc']))) {
         } else {
             header('Location: index.php?pageEdicion&Id=' . $Id . '');
         }
-    }elseif ($action === 'delete') {
+    } elseif ($action === 'delete') {
         $marca->deleteMarca($Id);
         echo '<script>location.replace("index.php?page=Marcas&del=Ok");</script>';
     }

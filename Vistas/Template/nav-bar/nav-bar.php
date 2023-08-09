@@ -13,23 +13,7 @@
     <link rel="stylesheet" href="Recursos/css/maps.css" asp-append-version="true" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <style>
-        /* Navbar styles */
-        .nav-link {
-            transition: color 0.3s ease, background-color 0.3s ease;
-        }
 
-        .nav-link:hover {
-            color: #007BFF;
-            background-color: #f5f5f5;
-        }
-
-        .navbar-brand img {
-            height: 120px;
-            /* Ajusta el tamaño según tu logo */
-            margin-right: 10px;
-        }
-    </style>
 </head>
 
 <body>
@@ -52,7 +36,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-light dropdown-toggle fs-6" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Edición de la página
+                                Edición de la página
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
@@ -65,7 +49,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark dropdown-item fs-6" href="index.php?page=Edicion&form=BGLOGO">
-                                            Editar Logo y Colores de la pagina
+                                        Editar Logo y Colores de la pagina
                                     </a>
                                 </li>
                                 <li>
@@ -73,7 +57,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark dropdown-item fs-6" href="index.php?page=Edicion&form=ImagenesCarrusel">
-                                            Editar Imagenes del Carrusel de fotos
+                                        Editar Imagenes del Carrusel de fotos
                                     </a>
                                 </li>
                                 <li>
@@ -81,14 +65,14 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark dropdown-item fs-6" asp-controller="Sesion" asp-action="Publicaciones" asp-route-Seccion="Publicidad">
-                                            Publicidad
+                                        Publicidad
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-light dropdown-toggle fs-6" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Sucursales
+                                Sucursales
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
@@ -101,14 +85,14 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark dropdown-item fs-6" href="index.php?page=CreateSucursales">
-                                            Agregar Sucursales
+                                        Agregar Sucursales
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown me-auto">
                             <a class="nav-link text-light dropdown-toggle fs-6" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Catalogos
+                                Catalogos
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
@@ -118,7 +102,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li class="nav-item">
-                                     <a class="nav-link text-dark fs-6" href="index.php?page=Marcas">Marcas</a>
+                                    <a class="nav-link text-dark fs-6" href="index.php?page=Marcas">Marcas</a>
                                 </li>
                             </ul>
                         </li>

@@ -1,11 +1,39 @@
 </main>
 </div>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="/Recursos/Css/footer.css">
+
 <footer class="border-top footer text-muted mt-5">
-    <div class="container">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+
+            <!-- Correos -->
+            <div class="col-md-4">
+                <h5 class="footer-h5"><i class="fas fa-envelope"></i> Correos:</h5>
+                <ul class="list-unstyled footer-content">
+                    <li>correo1@example.com</li>
+                    <li>correo2@example.com</li>
+                </ul>
+            </div>
+
+            <!-- Dirección -->
+            <div class="col-md-4">
+                <h5 class="footer-h5"><i class="fas fa-map-marker-alt"></i> Dirección:</h5>
+                <p class="footer-content">123 Calle Principal, Ciudad, País</p>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="col-md-4">
+                <h5 class="footer-h5"><i class="fas fa-phone-alt"></i> Teléfono:</h5>
+                <p class="footer-content">+123 456 7890</p>
+            </div>
+        </div>
+        <hr class="full-width-line">
         &copy; 2023 - WebApplication1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </div>
 </footer>
+
 <script src="Recursos/lib/jquery/dist/jquery.js"></script>
 <script src="Recursos/lib/jquery/dist/jquery.min.js"></script>
 <script src="Recursos/lib/jquery-validation/dist/jquery.validate.min.js"></script>

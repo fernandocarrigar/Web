@@ -1,0 +1,17 @@
+.full-width-line {
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+    margin-top: 0;
+    /* Restablecer márgenes superiores e inferiores si es necesario */
+    margin-bottom: 0;
+    /* Restablecer márgenes superiores e inferiores si es necesario */
+}
+
+.footer-h5,
+.footer-content {
+    text-align: center;
+    /* Centra el texto de los encabezados h5 */
+    margin-bottom: 20px;
+    /* Espaciado adicional debajo del encabezado para separarlo del contenido */
+}
