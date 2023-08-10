@@ -29,13 +29,13 @@
                 <div class="navbar-collapse collapse justify-content-center" id="navbarContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white fs-6" href="index.php">Home</a>
+                            <a class="nav-link text-white" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white fs-6" href="index.php?page=Nosotros">Nosotros</a>
+                            <a class="nav-link text-white" href="index.php?page=Nosotros">Nosotros</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-light dropdown-toggle fs-6" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                 Edición de la página
                             </a>
                             <ul class="dropdown-menu">
@@ -71,7 +71,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-light dropdown-toggle fs-6" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                 Sucursales
                             </a>
                             <ul class="dropdown-menu">
@@ -91,7 +91,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown me-auto">
-                            <a class="nav-link text-light dropdown-toggle fs-6" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                 Catalogos
                             </a>
                             <ul class="dropdown-menu">

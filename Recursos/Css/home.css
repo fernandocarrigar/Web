@@ -1,3 +1,4 @@
+/* --- Base Styles --- */
 html {
     scroll-behavior: smooth;
 }
@@ -9,13 +10,14 @@ body {
     padding: 0;
 }
 
+/* --- Navbar Styles --- */
 .navbar {
     margin-bottom: 50px;
 }
 
+/* --- Hero Section --- */
 .hero {
     background-image: url('tu-imagen-de-fondo.jpg');
-    /* Cambia por la URL de tu imagen */
     background-size: cover;
     background-position: center;
     height: 600px;
@@ -23,12 +25,6 @@ body {
     display: flex;
     align-items: center;
     padding: 50px 0;
-    /* Espacio superior e inferior para el encabezado */
-}
-
-.rounded-img {
-    border-radius: 15px;
-    /* Redondea los bordes de la imagen */
 }
 
 .hero h1 {
@@ -36,13 +32,228 @@ body {
     margin-bottom: 20px;
 }
 
+.hero img {
+    margin: 1rem 0;
+    /* Añade un espacio arriba y abajo si es necesario */
+}
+
+.hero .container {
+    padding: 2rem 0;
+}
+
+/* --- Images --- */
+.rounded-img {
+    border-radius: 15px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Products Section --- */
 .products {
     margin: 50px 0;
 }
 
-.img-fluid {
-    max-width: 90%;
-    /* Ajusta como desees */
-    margin: 0 auto;
-    /* Centrar la imagen horizontalmente */
+/* --- Carousel Styles --- */
+.custom-carousel {
+    display: flex;
+    align-items: center;
 }
+
+.custom-carousel-control {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.custom-carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.custom-carousel-icon {
+    background-color: transparent;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+.carousel-container {
+    padding: 0 0 48px 0;
+}
+
+/* --- Responsive Media Queries --- */
+
+@media screen and (max-width: 576px) {
+    .hero .col-sm-10 {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        padding: 20px 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.2rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .hero p {
+        font-size: 0.8rem;
+        text-align: left;
+    }
+
+    .hero img.img-fluid {
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
+
+    .hero .btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+        margin-top: 10px;
+        display: block;
+        /* Esto asegura que el botón se muestre como un bloque en su propia línea. */
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .hero {
+        padding: 20px 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        word-wrap: normal;
+        overflow-wrap: normal;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .hero img.img-fluid {
+        max-width: 90%;
+    }
+
+    .hero .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        display: block;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+    }
+
+    .hero .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero .row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hero h1 {
+        text-align: center;
+    }
+
+    .hero p {
+        text-align: left;
+        order: 1;
+    }
+
+    .hero .text-center {
+        text-align: left;
+    }
+
+    .hero .img-fluid {
+        order: 4;
+    }
+
+    .hero .text-center .btn {
+        order: 3;
+        margin: 20px 0;
+        width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero img {
+        margin-top: 20px;
+    }
+
+    .hero .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* --- Brands & Products Section Styles --- */
+.brand-container,
+.product-container {
+    margin-top: 3rem;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 10px;
+    overflow-x: hidden;
+}
+
+.card {
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+
+    .brand-container,
+    .product-container {
+        max-height: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {}
