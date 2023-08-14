@@ -1,0 +1,27 @@
+@media (max-width: 767px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+#imagePreview {
+    display: none;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+    object-fit: cover;
+    /* Esto se asegura de que la imagen se ajuste correctamente */
+}
+
+.image-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra los elementos horizontalmente */
+    justify-content: center;
+    /* Centra los elementos verticalmente */
+}
