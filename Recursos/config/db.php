@@ -1,14 +1,16 @@
 <?php
 
-class Conectar {
+class Conectar
+{
 
     public  $conexion;
     private $host = "localhost";    //------    ESTA LINEA DEINE EL SERVIDOR  -------//
-    private $user = "root";         //------    ESTA LINEA DEINE EL USUARIO  -------//
-    private $pass = "";             //------    ESTA LINEA DEINE LA CONTRASEÑA  -------//
-    private $dbname   = "web";   //------    ESTA LINEA DEINE LA BASE DATOS  -------//
+    private $user = "AdminMGTools";         //------    ESTA LINEA DEINE EL USUARIO  -------//
+    private $pass = "MGCTools2000";             //------    ESTA LINEA DEINE LA CONTRASEÑA  -------//
+    private $dbname   = "u970383095_MGCTools";   //------    ESTA LINEA DEINE LA BASE DATOS  -------//
 
-    public function conexionBD() {
+    public function conexionBD()
+    {
 
         $conexion = new mysqli($this->host, $this->user, $this->pass, $this->dbname);
         // if($conexion->connect_error){
@@ -24,5 +26,3 @@ class Conectar {
 $con = new Conectar();
 $connect = $con->conexionBD();
 //  print_r($con->conexionBD());
-
-?>
