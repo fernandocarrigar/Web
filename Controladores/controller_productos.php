@@ -67,6 +67,18 @@ class Productos extends Conectar {
         return $this->field;
     }
 
+    public function getWhereHerramienta($value)  {
+        $this->val = $value;
+
+        $sql = "SELECT * FROM {$this->view} WHERE IdHerramienta='{$this->val}' ";
+        // echo $sql;
+        $result = $this->db->query($sql);
+        while($row = $result->fetch_assoc())   {
+            $this->field[] = $row;
+        }
+        return $this->field;
+    }
+
     public function getView() {
         $sql = "SELECT * FROM {$this->view}";
 
@@ -88,23 +100,24 @@ class Productos extends Conectar {
         return $this->field;
     }
 
-    public function insertProducto($desc,$file,$type,$marca) {
+    public function insertProducto($desc,$file,$type,$marca, $herr) {
         $this->col = implode(",",$this->column);
 
         // echo $this->col;
         // echo $this->val;
-        $sql = "INSERT INTO {$this->table} ({$this->pkey},{$this->col}) VALUE (NULL,'$desc','$file','$type', '$marca')";
+        $sql = "INSERT INTO {$this->table} ({$this->pkey},{$this->col}) VALUE (NULL,'$desc','$file','$type', '$marca', '$herr')";
         // echo $sql;
         $this->db->query($sql);
     }
 
-    public function updateProducto($value,$desc,$file,$type,$marca)  {
+    public function updateProducto($value,$desc,$file,$type,$marca,$herr)  {
         $this->id = $value;     //ATRAPA EL ID QUE SE USARA PARA IDENTIFICAR CUAL SE CAMBIARA
         // $this->col = implode(",",$this->columsn);
         $this->values[] = $this->column[0] ."='". $desc ."'";
         $this->values[] = $this->column[1] ."='". $file ."'";
         $this->values[] = $this->column[2] ."='". $type ."'";
         $this->values[] = $this->column[3] ."='". $marca ."'";
+        $this->values[] = $this->column[3] ."='". $herr ."'";
         $this->val = implode(",",$this->values);
 
         $sql = "UPDATE {$this->table} SET {$this->val} WHERE {$this->pkey}='{$this->id}'";

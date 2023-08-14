@@ -26,6 +26,8 @@ if ((!empty($_GET['Id'])) && (isset($_GET['Id'])))  {
 
 $dtpub = $publicacion->getView();
 
+$dtpubSeccion = $publicacion->getViewSeccion("ImagenesCarrusel");
+
 if ((!empty($_POST['Seccion'])) && (isset($_POST['Seccion'])))  {
     $Seccion = $_POST['Seccion'];
     $dtSecpub = $publicacion->getWhereSeccion($Seccion);

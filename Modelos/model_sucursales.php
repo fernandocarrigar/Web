@@ -47,6 +47,8 @@ if((!empty($_GET['actionsucur'])) && (isset($_GET['actionsucur']))) {
 
             $sucursales->insertSuc();
 
+            echo '<script>location.replace("index.php?page=Sucursales");</script>';
+
     }elseif($action === 'update'){
 
         $sucursales->values[] = "'".$_POST['Longitud']."'";
@@ -56,11 +58,13 @@ if((!empty($_GET['actionsucur'])) && (isset($_GET['actionsucur']))) {
 
         $sucursales->updateSuc($Id);
 
+        echo '<script>location.replace("index.php?page=Sucursales");</script>';
+
     }elseif($action === 'delete')   {
 
         $sucursales->deleteSuc($Id);
 
-        header('Location: index.php?page=Sucursales');
+        echo '<script>location.replace("index.php?page=Sucursales");</script>';
     }
 }
 

@@ -47,7 +47,7 @@ class Marcas extends Conectar {
     public function getWhere($value)  {
         $this->id = $value;
         $sql = "SELECT * FROM {$this->table} WHERE {$this->pkey}={$this->id}";
-
+        // echo $sql;
         $result = $this->db->query($sql);
         while($row = $result->fetch_assoc())   {
             $this->field[] = $row;

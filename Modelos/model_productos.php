@@ -70,6 +70,7 @@ $producto->setColumns('Descripcion');
 $producto->setColumns('Archivo');
 $producto->setColumns('MimeType');
 $producto->setColumns('IdMarca');
+$producto->setColumns('IdHerramienta');
 
 // $fch_r = date('Y-m-d');     //OBTIENE LA FECHA ACTUAL
 
@@ -90,9 +91,16 @@ if ((!empty($_POST['Marca'])) && (isset($_POST['Marca'])))  {
     $dtmarcawhere = null;
 }
 
-if ((!empty($_GET['Marca'])) && (isset($_GET['Marca']))) {
+
+
+if (((!empty($_GET['Marca'])) && (isset($_GET['Marca']))) && ((!empty($_GET['TpH'])) && (isset($_GET['TpH'])))) {
+
+}elseif(((!empty($_GET['Marca'])) && (isset($_GET['Marca']))) && ((empty($_GET['TpH'])) && (!isset($_GET['TpH'])))) {
     $Marca = $_GET['Marca'];
     $dtmarcawhere = $producto->getWhereMarca($Marca);
+}elseif(((empty($_GET['Marca'])) && (!isset($_GET['Marca']))) && ((!empty($_GET['TpH'])) && (isset($_GET['TpH'])))) {
+    $Marca = $_GET['TpH'];
+    $dtmarcawhere = $producto->getWhereHerramienta($Marca);
 } else {
     $dtmarcawhere = null;
 }
@@ -138,8 +146,9 @@ if((!empty($_GET['actionprod'])) && (isset($_GET['actionprod']))) {
 
                 $descrip = "". $_POST['Descripcion'] ."";
                 $idmar = "". $_POST['IdMarca'] ."";
+                $idherr = "". $_POST['IdHerramienta'] ."";
 
-                $producto->insertProducto($descrip, $dtfile, $filetype,$idmar);
+                $producto->insertProducto($descrip, $dtfile, $filetype, $idmar,$idherr);
 
                 // BORRA LOS ARCHIVOS QUE SE GUARDARON TEMPORALMENTE EN EL SERVIDOR
                 unlink($rtfile);
@@ -187,8 +196,9 @@ if((!empty($_GET['actionprod'])) && (isset($_GET['actionprod']))) {
 
                 $descrip = "". $_POST['Descripcion'] ."";
                 $idmar = "". $_POST['IdMarca'] ."";
+                $idherr = "". $_POST['IdHerramienta'] ."";
 
-                $producto->updateProducto($Id,$descrip, $dtfile, $filetype,$idmar);
+                $producto->updateProducto($Id,$descrip, $dtfile, $filetype,$idmar, $idherr);
 
                 // BORRA LOS ARCHIVOS QUE SE GUARDARON TEMPORALMENTE EN EL SERVIDOR
                 unlink($rtfile);

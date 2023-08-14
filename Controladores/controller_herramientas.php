@@ -1,10 +1,10 @@
 <?php
 
-class Publicacion extends Conectar {
+class Herramientas extends Conectar {
     private $table;
     private $view;
     private $id;
-    public $lstid;
+    private $lastid;
     public $values = array();
 
     public function __construct(){
@@ -14,8 +14,8 @@ class Publicacion extends Conectar {
     }
 
     public function lastId() {
-        $this->lstid = $this->db->insert_id;
-        return $this->lstid;
+        $this->lastid = $this->db->insert_id;
+        return $this->lastid;
     }
 
     public function setView($v) {
@@ -38,7 +38,7 @@ class Publicacion extends Conectar {
         $sql = "SELECT * FROM {$this->table}";
 
         $result = $this->db->query($sql);
-        while($row = $result->fetch_assoc())   {
+        while($row = $result->fetch_assoc()) {
             $this->field[] = $row;
         }
         return $this->field;
@@ -46,8 +46,8 @@ class Publicacion extends Conectar {
 
     public function getWhere($value)  {
         $this->id = $value;
-        $sql = "SELECT * FROM {$this->view} WHERE {$this->pkey}='{$this->id}'";
-        
+        $sql = "SELECT * FROM {$this->table} WHERE {$this->pkey}={$this->id}";
+
         $result = $this->db->query($sql);
         while($row = $result->fetch_assoc())   {
             $this->field[] = $row;
@@ -55,10 +55,10 @@ class Publicacion extends Conectar {
         return $this->field;
     }
 
-    public function getWhereSeccion($value)  {
+    public function getWhereHerramienta($value)  {
         $this->val = $value;
 
-        $sql = "SELECT * FROM {$this->view} WHERE IdSeccion Like '%{$this->val}%' ";
+        $sql = "SELECT * FROM {$this->view} WHERE IdMarca='{$this->val}' ";
         // echo $sql;
         $result = $this->db->query($sql);
         while($row = $result->fetch_assoc())   {
@@ -75,20 +75,6 @@ class Publicacion extends Conectar {
             $this->field[] = $row;
         }
         return $this->field;
-        // return $result;
-        // return $row;
-    }
-
-    public function getViewSeccion($Seccion) {
-        $sql = "SELECT * FROM {$this->view} WHERE Seccion LIKE '%{$Seccion}%'";
-
-        $result = $this->db->query($sql);
-        while($row = $result->fetch_assoc()) {
-            $this->field[] = $row;
-        }
-        return $this->field;
-        // return $result;
-        // return $row;
     }
 
     public function getWhereview($value)  {
@@ -102,31 +88,29 @@ class Publicacion extends Conectar {
         return $this->field;
     }
 
-    public function insertPub() {
+    public function insertHerramienta($herr) {
         $this->col = implode(",",$this->column);
-        $this->val = implode(",",$this->values);
+
         // echo $this->col;
-        $sql = "INSERT INTO {$this->table} ({$this->pkey},{$this->col}) VALUE (NULL,{$this->val})";
+        // echo $this->val;
+        $sql = "INSERT INTO {$this->table} ({$this->pkey},{$this->col}) VALUE (NULL,'$herr')";
         // echo $sql;
         $this->db->query($sql);
     }
 
-    public function updatePub($value)  {
+    public function updateHerramienta($value,$herr)  {
         $this->id = $value;     //ATRAPA EL ID QUE SE USARA PARA IDENTIFICAR CUAL SE CAMBIARA
-        $this->val = array();   //SE CREA UN ARRAY DONDE SE COMBINARAN LOS DEMAS
-        for ($index = 0; $index < count($this->values); $index++) {     //SE INICIA EL CICLO DONDE SE LEE LA CANTIDAD DE VALORES
-            $this->val[$index] = $this->column[$index] ."=". $this->values[$index];     //SE CONCATENAN LOS ARRAY PARA ALMACENARLOS EN OTRO ARRAY
-        }
-        // print_r($this->id);
-        // print_r($this->val);     //SE IMPRIME EL ARRAY DONDE SE UNIERON LOS OTROS ARRAY, PARA VER COMO QUEDA
-        $this->consult = implode(",",$this->val);       //IMPLODE FUNCIONA PARA CONVERTIR UN ARRAY EN TEXTO Y PODER SEPARARLO CON UN CARACTER O TEXTO DETERMINADO
-        // echo $this->consult;       //SE IMPRIME PARA VER COMO QUEDO DESPUES DEL IMPLODE
-        $sql = "UPDATE {$this->table} SET {$this->consult} WHERE {$this->pkey}={$this->id}";
-        // echo $sql;
+        // $this->col = implode(",",$this->columsn);
+        $this->values[] = $this->column[0] ."='". $herr ."'";
+
+        $this->val = implode(",",$this->values);
+
+        $sql = "UPDATE {$this->table} SET {$this->val} WHERE {$this->pkey}='{$this->id}'";
         $this->db->query($sql);
     }
 
-    public function deletePub($value)  {
+
+    public function deleteHerramienta($value)  {
         $this->id = $value;
         $sql = "DELETE FROM {$this->table} WHERE {$this->pkey}={$this->id}";
         $this->db->query($sql);

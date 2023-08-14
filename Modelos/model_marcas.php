@@ -70,11 +70,12 @@ $marca->setColumns('Nombre');
 $marca->setColumns('Archivo');
 $marca->setColumns('MimeType');
 
-if ((!empty($_GET['Id'])) && (isset($_GET['Id']))) {
-    $Id = $_GET['Id'];
-    $dtmarcawhere = $marca->getWhere($Id);
+if ((!empty($_GET['IdM'])) && (isset($_GET['IdM']))) {
+    $IdM = $_GET['IdM'];
+    $dtmarcawhere = $marca->getWhere($IdM);
 } else {
-    $Id = null;
+    $IdM = null;
+    $dtmarcawhere = null;
 }
 $dtmarca = $marca->getAll();
 
@@ -136,7 +137,7 @@ if ((!empty($_GET['actionmarc'])) && (isset($_GET['actionmarc']))) {
     } elseif ($action === 'update') {
 
         //VERIFICA QUE $_FILES NO ESTE VACIO Y QUE SI CONTENGA ALGUN OBJETO
-        if (!empty($_FILES['Archivo'])) {
+        if (!empty($_FILES['Archivo']['tmp_name'])) {
 
             $archivoname = $_FILES['Archivo']['name'];
             $archivotype = $_FILES['Archivo']['type'];
@@ -171,7 +172,7 @@ if ((!empty($_GET['actionmarc'])) && (isset($_GET['actionmarc']))) {
 
                 $namemarc = "" . $_POST['Nombre'] . "";
 
-                $marca->updateMarca($Id, $namemarc, $dtfile, $filetype);
+                $marca->updateMarca($IdM, $namemarc, $dtfile, $filetype);
                 $idfile = $marca->lastId();
 
                 // BORRA LOS ARCHIVOS QUE SE GUARDARON TEMPORALMENTE EN EL SERVIDOR
@@ -180,10 +181,10 @@ if ((!empty($_GET['actionmarc'])) && (isset($_GET['actionmarc']))) {
                 echo '<script>location.replace("index.php?page=Marcas&upd=Ok");</script>';
             }
         } else {
-            header('Location: index.php?pageEdicion&Id=' . $Id . '');
+            echo '<script>alert("Inserte un archivo");</script>';
         }
     } elseif ($action === 'delete') {
-        $marca->deleteMarca($Id);
+        $marca->deleteMarca($IdM);
         echo '<script>location.replace("index.php?page=Marcas&del=Ok");</script>';
     }
 }
