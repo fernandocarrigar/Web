@@ -96,6 +96,10 @@ body {
     padding: 0 0 48px 0;
 }
 
+.navbar li:hover{
+    font-size: large;
+}
+
 /* --- Responsive Media Queries --- */
 
 @media screen and (max-width: 576px) {
@@ -245,7 +249,7 @@ body {
 }
 
 .card {
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 @media screen and (max-width: 767px) {
