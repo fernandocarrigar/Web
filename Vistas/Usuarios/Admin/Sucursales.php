@@ -5,7 +5,11 @@
 ?>
 
 <div class="container shadow p-5 justify-content-center bg-dark-subtle" data-aos="zoom-in">
-    <h3 class="text-black text-center mb-4">Ubicaciones de las Sucursales</h3>
+
+    <div class="container-fluid d-inline-flex">
+        <h3 class="text-black text-center mb-4 me-auto">Ubicaciones de las Sucursales</h3>
+        <a href="index.php?page=CreateSucursales" class="btn btn-primary ms-auto me-auto mb-2">Agregar sucursal al mapa</a>
+    </div>
 
     <div class="container-fluid d-inline-flex">
         <div class="justify-content-center d-block bg-white p-2 rounded col-6 shadow-lg">

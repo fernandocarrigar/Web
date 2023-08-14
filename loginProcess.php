@@ -1,5 +1,5 @@
 <?php
-include 'Controladores/controller_login.php';
+include_once('Controladores/controller_login.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($error) {
         // Mostrar el error en la página de inicio de sesión o usar una sesión para almacenar el mensaje de error.
-        header("Location: login.php?error=" . urlencode($error));
+        header("Location: index.php?Login&error=" . urlencode($error));
     }
 }
+?>

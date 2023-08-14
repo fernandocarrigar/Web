@@ -20,7 +20,7 @@
 
 <!-- Navbar lateral start-->
 
-<div class="offcanvas offcanvas-start text-bg-white" id="demo">
+<!-- <div class="offcanvas offcanvas-start text-bg-white" id="demo">
     <div class="offcanvas-header">
         <h1 class="offcanvas-title">Filtros</h1>
         <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas"></button>
@@ -46,28 +46,28 @@
             </ul>
         </form>
     </div>
-</div>
+</div> -->
 <!-- Navbar lateral end-->
 
 <div class="container shadow p-5 justify-content-center bg-dark-subtle">
 
     <!-- Titulo de la vista -->
-    <h1 class="text-center">Publicaciones</h1>
+    <h1 class="text-center">Imagenes del Carrusel</h1>
     <!-- Titulo de la vista -->
     <!-- Boton del navbar lateral -->
-    <button class="btn btn-primary btn-lg d-relative m-4" tabindex="-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+    <!-- <button class="btn btn-primary btn-lg d-relative m-4" tabindex="-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
         Publicaciones
-    </button>
+    </button> -->
     <!-- Boton del navbar lateral -->
 
     <div class="container mt-3 p-3 bg-white overflow-auto table-scroll rounded" style="max-height:600px;">
     <?php
-        if(isset($Seccion)){
+        // if(isset($Seccion)){
     ?>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <?php
                 foreach($dtpub as $rows):
-                    if($rows['Seccion'] === $Seccion){
+                    // if($rows['Seccion'] === $Seccion){
             ?>
             <div class="col">
                 <div class="card h-100">
@@ -89,23 +89,23 @@
                 </div>
             </div>
             <?php
-                }
+                // }
                 endforeach;
             ?>
         </div>
     <?php
-        }else if(!isset($Seccion)){
+        // }else if(!isset($Seccion)){
     ?>
-        <div class="row justify-content-center">
+        <!-- <div class="row justify-content-center">
             <p>En esta seccion, se podran ver las diferentes publicaciones que existen en la pagina. <br />
                 De igual manera hay un boton en la parte superior que permite el 
                 <a class="underline" tabindex="-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">filtrado</a>
                  de las publicaciones, 
                 de esta manera podra diferenciar sin importar cuantas tenga en el sitio web.
             </p>
-        </div>
+        </div> -->
     <?php
-        }
+        // }
     ?>
     </div>
 </div>

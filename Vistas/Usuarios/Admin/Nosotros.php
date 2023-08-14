@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-6">
                 <!-- Puedes añadir una imagen relacionada con tu negocio aquí -->
-                <img src="/Img/Home.png" alt="Imagen Descriptiva" class="img-fluid rounded">
+                <img src="Img/Home.png" alt="Imagen Descriptiva" class="img-fluid rounded">
             </div>
         </div>
         <hr>
@@ -60,11 +60,11 @@
                 <h2 class="pb-3 mt-3">Valores</h2>
                 <div class="container-list">
                     <ul style="font-size: 26px" class="professional-list">
-                        <li><img src="/Img/MGC_Logo_EngraneB.png" alt="Logo" class="list-icon"> Actitud de servicio</li>
-                        <li><img src="/Img/MGC_Logo_EngraneB.png" alt="Logo" class="list-icon"> Compromiso</li>
-                        <li><img src="/Img/MGC_Logo_EngraneB.png" alt="Logo" class="list-icon"> Innovación</li>
-                        <li><img src="/Img/MGC_Logo_EngraneB.png" alt="Logo" class="list-icon"> Honestidad</li>
-                        <li><img src="/Img/MGC_Logo_EngraneB.png" alt="Logo" class="list-icon"> Lealtad</li>
+                        <li><img src="Img/MGC_Logo_EngraneB.png" alt="Logo" class="list-icon"> Actitud de servicio</li>
+                        <li><img src="Img/MGC_Logo_EngraneB.png" alt="Logo" class="list-icon"> Compromiso</li>
+                        <li><img src="Img/MGC_Logo_EngraneB.png" alt="Logo" class="list-icon"> Innovación</li>
+                        <li><img src="Img/MGC_Logo_EngraneB.png" alt="Logo" class="list-icon"> Honestidad</li>
+                        <li><img src="Img/MGC_Logo_EngraneB.png" alt="Logo" class="list-icon"> Lealtad</li>
                     </ul>
                 </div>
 
@@ -176,7 +176,7 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src="/Img/Camaras.PNG" alt="Servicio Ampliado" class="img-fluid rounded border border-ligth">
+                    <img src="Img/Camaras.PNG" alt="Servicio Ampliado" class="img-fluid rounded border border-ligth">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -189,7 +189,7 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src="/Img/Tipos.PNG" alt="Servicio Ampliado" class="img-fluid rounded border border-ligth">
+                    <img src="Img/Tipos.PNG" alt="Servicio Ampliado" class="img-fluid rounded border border-ligth">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

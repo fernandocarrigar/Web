@@ -59,7 +59,7 @@
 
     <div class="container mt-3 p-3 bg-white overflow-auto table-scroll rounded" style="max-height:600px;">
     <?php
-        if(isset($Marca)){
+        if((isset($Marca))){
     ?>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <?php
@@ -73,7 +73,7 @@
                                 <h5 class="card-title"><?php echo $rows['Nombre']?></h5>
                                 <p class="card-text"><?php echo $rows['Descripcion'] ?></p>
                                 <div class="d-inline-flex">
-                                    <a href="index.php?page=Edicion&Id=<?php echo $rows['IdProductos']?>&form=<?php echo $form?>" class="btn btn-success btn-sm">
+                                    <a href="index.php?page=EdicionCatalogos&Id=<?php echo $rows['IdProductos']?>&form=Productos" class="btn btn-success btn-sm">
                                     Actualizar
                                 </a>
                             </div>
@@ -112,7 +112,7 @@
                         <h5 class="card-title"><?php echo $rows['Nombre']?></h5>
                         <p class="card-text"><?php echo $rows['Descripcion'] ?></p>
                         <div class="d-inline-flex">
-                            <a href="index.php?page=Edicion&Id=<?php echo $rows['IdProductos']?>&form=<?php echo $form?>" class="btn btn-success btn-sm">
+                            <a href="index.php?page=EdicionCatalogos&Id=<?php echo $rows['IdProductos']?>&form=Productos" class="btn btn-success btn-sm">
                                 Actualizar
                             </a>
                         </div>

@@ -5,9 +5,9 @@ require_once("Modelos/model_archivos.php");
 require_once("Modelos/model_publicaciones.php");
 
 
-if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
-        $form = $_GET['form'];
-    }
+// if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
+//         $form = $_GET['form'];
+//     }
 ?>
 
 <div class="offcanvas offcanvas-start text-bg-white" id="demo">
@@ -46,13 +46,13 @@ if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
 <div class="container p-5 justify-content-center bg-dark-subtle">
 
 <!-- Titulo de la vista -->
-    <h1 class="text-center">Edicion de pagina</h1>
+    <!-- <h1 class="text-center">Edicion de pagina</h1> -->
     <!-- Titulo de la vista -->
 
     <!-- Boton del navbar lateral -->
-    <button class="btn btn-primary btn-lg d-relative m-4" tabindex="-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+    <!-- <button class="btn btn-primary btn-lg d-relative m-4" tabindex="-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
         Editar pagina
-    </button>
+    </button> -->
     <!-- Boton del navbar lateral -->
 
     <?php 
@@ -62,16 +62,16 @@ if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
         <?php
     }else{
         ?>
-            <form method="post" action="index.php?page=Edicion&actionfile=insert&actionpub=insert" enctype="multipart/form-data" onsubmit="alert('Funciona')">
+            <form method="post" action="index.php?page=Edicion&actionfile=insert&actionpub=insert" enctype="multipart/form-data">
         <?php
     }
     
     if(isset($dtpubwhere)){
         foreach($dtpubwhere as $rows):
 
-            if($form == 'BGLOGO'){
+            // if($form == 'BGLOGO'){
                 ?>
-                <div class="container table-responsive d-inline-flex rounded ms-auto me-auto bg-white">
+                <!-- <div class="container table-responsive d-inline-flex rounded ms-auto me-auto bg-white">
                     <div class=" justify-content-center m-4 ms-5 d-block">
                         <h3 class="ms-5">Colores de la pagina</h3>
                         <div class="card-body d-inline-flex justify-content-center rounded bg-white">
@@ -106,9 +106,9 @@ if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
                 </div>
                 <div class="container mt-4 ms-auto me-auto">
                         <button type="submit" class="btn btn-success btn-lg">Enviar</button>
-                    </div>
+                    </div> -->
                 <?php
-                }else if($form == 'ImagenesCarrusel'){
+                // }else if($form == 'ImagenesCarrusel'){
                 ?>
                     <div class="container-sm justify-content-center rounded-1 ms-auto me-auto p-2 bg-white">
                         <h3 class="text-center">Imagen del carrusel</h3>
@@ -135,14 +135,14 @@ if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
                         <button type="submit" class="btn btn-success btn-lg">Enviar</button>
                     </div>
                 <?php
-            }
+            // }
 
         endforeach;
     }else if(!isset($dtpubwhere)){
         
-        if($form == 'BGLOGO'){
+        // if($form == 'BGLOGO'){
                 ?>
-                <div class="container table-responsive d-inline-flex rounded ms-auto me-auto bg-white">
+                <!-- <div class="container table-responsive d-inline-flex rounded ms-auto me-auto bg-white">
                     <div class=" justify-content-center m-4 ms-5 d-block">
                         <h3 class="ms-5">Colores de la pagina</h3>
                         <div class="card-body d-inline-flex justify-content-center rounded bg-white">
@@ -177,9 +177,9 @@ if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
                 </div>
                 <div class="container mt-4 ms-auto me-auto">
                         <button type="submit" class="btn btn-success btn-lg">Enviar</button>
-                    </div>
+                    </div> -->
                 <?php
-                }else if($form == 'ImagenesCarrusel'){
+                // }else if($form == 'ImagenesCarrusel'){
                 ?>
                     <div class="container-sm justify-content-center rounded-1 ms-auto me-auto p-2 bg-white">
                         <h3 class="text-center">Imagen del carrusel</h3>
@@ -206,7 +206,7 @@ if((!empty($_GET['form']))  ||  (isset($_GET['form']))) {
                         <button type="submit" class="btn btn-success btn-lg">Enviar</button>
                     </div>
         <?php
-                }
+                // }
     }
         ?>
     </form>

@@ -73,7 +73,7 @@
                     <div class="card-body overflow-auto shadow">
                         <h5 class="card-title"><?php echo $rows['Nombre']?></h5>
                         <div class="d-inline-flex">
-                            <a href="index.php?page=EdicionCatalogos&Id=<?php echo $rows['IdMarca']?>&form=Marcas" class="btn btn-success btn-sm">
+                            <a href="index.php?page=EdicionCatalogos&IdM=<?php echo $rows['IdMarca']?>&form=Marcas" class="btn btn-success btn-sm">
                                 Actualizar
                             </a>
                         </div>
